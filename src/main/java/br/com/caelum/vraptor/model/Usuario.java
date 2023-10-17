@@ -1,16 +1,20 @@
 package br.com.caelum.vraptor.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Usuario {
+public class Usuario extends Model {
+
+
+	@NotEmpty(message="Campo cpf não pode estar vazio")
+	private String cpf; 
 	
-	@Id
-	private int cpf; 
-	
+	@NotEmpty(message="Campo senha não pode estar vazio")
 	private String senha;
 	
+	@NotEmpty(message="Campo nome não pode ser vazio")
 	private String nome;
 	
 	public String getNome() {
@@ -21,14 +25,14 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	
-	public void setCpf(int cpf) {
+
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	
+
 	public String getSenha() {
 		return senha;
 	}

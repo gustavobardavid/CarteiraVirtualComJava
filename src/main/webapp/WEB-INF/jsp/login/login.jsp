@@ -45,6 +45,13 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login!</h1>
                   </div>
+                  	<c:if test="${not empty errors}">
+				<div class="alert alert-danger" role="alert">
+					<c:forEach var="error" items="${errors}">
+						 ${error.message}<br/>
+					</c:forEach>
+				</div>
+			</c:if>
                   <form class="user" method="post" action="<c:url value='login/validausuario'/>">
                   
                     <div class="form-group">
