@@ -55,10 +55,10 @@
                   <form class="user" method="post" action="<c:url value='login/validausuario'/>">
                   
                     <div class="form-group">
-                      <input name="usuario.cpf" type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Cpf">
+                      <input name="usuario.cpf" type="text" class="form-control form-control-user" placeholder="Cpf">
                     </div>
                     <div class="form-group">
-                      <input name="usuario.senha" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
+                      <input name="usuario.senha" type="password" class="form-control form-control-user" placeholder="Senha">
                     </div>
                     <button type="submit" class="btn btn-primary btn-user btn-block">
                       Login
