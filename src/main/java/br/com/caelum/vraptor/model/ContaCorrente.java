@@ -1,5 +1,8 @@
 package br.com.caelum.vraptor.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class ContaCorrente extends Conta {
 	
 	private double taxaManutencao;
@@ -10,6 +13,16 @@ public class ContaCorrente extends Conta {
 		return taxaManutencao;
 	}
 
+	public ContaCorrente(String agencia, String numConta, double saldo, int variacao, double taxaManutencao,
+			double limiteCredito) {
+		super(agencia, numConta, saldo, variacao);
+		this.taxaManutencao = taxaManutencao;
+		this.limiteCredito = limiteCredito;
+	}
+
+    public ContaCorrente() {
+        // Construtor padrão sem argumentos
+    }
 	public void setTaxaManutencao(double taxaManutencao) {
 		this.taxaManutencao = taxaManutencao;
 	}
