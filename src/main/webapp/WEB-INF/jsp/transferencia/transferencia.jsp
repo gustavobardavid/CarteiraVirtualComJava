@@ -20,9 +20,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link href="style.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <style>
 	 
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
@@ -82,6 +84,7 @@ body {
     transition: all 2s cubic-bezier(0.22, 1, 0.25, 1);
 }
 </style>
+
 <body class="">
 <div class="navbar navbar-expand-lg navbar-light bg-light">
 <span class="btn">
@@ -101,75 +104,60 @@ body {
 </a>            
 </span>
 </div>
-<div class="alert alert-info mt-4" id="notification">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeButton">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <strong>Atenção:</strong> Sua fatura de cartão de crédito vence em 5 dias.
-</div>
 <div class="container">
- <div class="col-md-12">
-            <div class="card mt-5">
-                <div class="card-body">
-					<h5 class="text-center mt-5">Seja Bem-vindo, <c:out value="${usuario.nome}" />. Sentimos sua falta!</h5>
-                </div>
-            </div>
-        </div>
     <div class="row">
         <div class="col-md-6">
             <div class="card mt-5">
                 <div class="card-body">
-                    <h4 class="card-title">Cartão de Crédito</h4>
-                    <p class="card-text">R$ 2,500.00</p>
+                    <h4 class="card-title">Saldo Conta Corrente</h4>
+                    <p class="card-text">R$ <c:out value="${usuario.getContaCorrente().getSaldo()}" /></p>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+         <div class="col-md-6">
             <div class="card mt-5">
                 <div class="card-body">
-                    <h4 class="card-title">Extrato Recente</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item">Transação 1 - R$ 100.00</li>
-                        <li class="list-group-item">Transação 2 - R$ 50.00</li>
-                        <li class="list-group-item">Transação 3 - R$ 200.00</li>
-                    </ul>
+                    <h4 class="card-title">Saldo Conta Poupanca</h4>
+                    <p class="card-text">R$ <c:out value="${usuario.getContaPoupanca().getSaldo()}" /></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <h4 class="card-title">Digite os dados da conta destino:</h4>
+                    <form>
+  <div class="form-row align-items-center">
+    <div class="col-sm-3 my-1">
+      <label class="sr-only" for="inlineFormInputName">Agência</label>
+      <input type="text" class="form-control" id="inlineFormInputName" placeholder="Agência">
+    </div>
+    <div class="col-sm-3 my-1">
+      <label class="sr-only" for="inlineFormInputGroupUsername">Conta</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Conta">
+      </div>
+    </div>
+   <div class="col-auto my-1">
+      <label class="sr-only" for="inlineFormCustomSelect">Preference</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected>Conta Corrente</option>
+        <option value="2">Conta Poupança</option>
+      </select>
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Transferir</button>
+    </div>
+  </div>
+  
+</form>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row mt-4">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Conta Corrente</h4>
-                    <p class="card-text">Saldo: R$ <c:out value="${usuario.getContaCorrente().getSaldo()}" /></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Conta Poupança</h4>
-                    <p class="card-text">Saldo: R$  <c:out value="${usuario.getContaPoupanca().getSaldo()}" /></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Investimentos</h4>
-                    <p class="card-text">Saldo: R$ 20,000.00</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+ 
     <div class="text-center mt-4">
-        <a href="<c:url value="transferencia"> <c:param name="id" value="${usuario.id}" /></c:url>" 
-        	class="btn btn-success mr-3">Transferência
-		</a>
-        <a href="<c:url value='extrato'/>" class="btn btn-primary mr-3">Extrato</a>
-        <a href="<c:url value='pix'/>" class="btn btn-danger">PIX</a>
+        <a href="<c:url value='home'/>" class="btn btn-danger">Voltar</a>
     </div>
     
     

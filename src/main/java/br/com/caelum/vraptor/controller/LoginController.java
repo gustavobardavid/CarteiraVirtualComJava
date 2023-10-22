@@ -26,26 +26,5 @@ public class LoginController {
 	@Get("")
 	public void login() {
 		
-	}
-	
-	@Post("validausuario")
-	public void validarUsuario(Usuario usuario) {
-		//procura o usuario no banco
-		List<Usuario> usuarios = dao.findAll();
-		boolean cpfEncontrado = false;
-		Usuario usuarioEncontrado = null;
-	    for (Usuario usuarioBanco : usuarios) {
-	        if (usuarioBanco.getCpf().equals(usuario.getCpf())) {
-	            cpfEncontrado = true;
-	            usuarioEncontrado = usuarioBanco;
-	            break; // Sai do loop assim que encontrar um CPF correspondente
-	        }
-	    }
-	    if (cpfEncontrado) {
-	        result.redirectTo(HomeController.class).home(usuarioEncontrado);
-	    } else {
-	        result.redirectTo(this).login();
-	    }
-	}
-	
+	}	
 }
