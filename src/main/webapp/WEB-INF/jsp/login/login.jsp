@@ -29,6 +29,10 @@
 <style>
 	 
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+header {
+  display: flex;
+  justify-content: center;  
+}
 body {
   font-size: 13px;
   font-weight: 400;
@@ -86,7 +90,25 @@ body {
     transition: all 2s cubic-bezier(0.22, 1, 0.25, 1);
 }
 </style>
+<header>
 
+    <span class="btn">
+      <a
+      href="#"
+      class='button'
+      >
+      <svg>
+        <rect
+        x="0" y="0" 
+        fill="none"
+        width="100%"
+        height="100%"
+        />
+      </svg>
+      PROGRAMIZE Wallet   
+    </a>         
+  </span>    
+</header>
 <body class="">
 
   <div class="container">
@@ -94,22 +116,7 @@ body {
     <!-- Outer Row -->
     <div class="row justify-content-center">
       <div class="col-xl-10 col-lg-12 col-md-9">
-  <span class="btn">
-    <a
-    href="#"
-    class='button'
-    >
-    <svg>
-        <rect
-        x="0" y="0" 
-        fill="none"
-        width="100%"
-        height="100%"
-        />
-    </svg>
-    PROGRAMIZE
-</a>            
-</span>
+ 
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
@@ -136,7 +143,7 @@ body {
                       <input name="usuario.senha" type="password" class="form-control form-control-user" placeholder="Senha">
                     </div>
                     <button type="submit" class="btn btn-primary btn-user btn-block">
-                      Login
+                      Entrar
                     </button>
                     <hr>
                   </form>

@@ -53,6 +53,26 @@ public class UsuarioDAO {
 		return Usuarios;
 	}
 	
+	public Usuario update(Usuario usuario) {
+	    EntityManager em = new ConnectionFactory().getConnection();
+
+	    try {
+	        em.getTransaction().begin();
+	        // Verifica se o usuário já existe no banco (se tiver um ID)
+	        if (usuario.getId() > 0) {
+	            // Atualiza o usuário existente no banco
+	            usuario = em.merge(usuario);
+	            em.getTransaction().commit();
+	        }
+	    } catch (Exception e) {
+	        System.err.println(e);
+	        em.getTransaction().rollback();
+	    } finally {
+	        em.close();
+	    }
+	    return usuario;
+	}
+	
 	public Usuario remove(Integer Id) {
 		
 		EntityManager em = new ConnectionFactory().getConnection();

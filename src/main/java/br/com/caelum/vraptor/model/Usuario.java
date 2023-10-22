@@ -1,6 +1,8 @@
 package br.com.caelum.vraptor.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
@@ -19,11 +21,11 @@ public class Usuario extends Model {
 	@NotEmpty(message="Campo nome não pode ser vazio")
 	private String nome;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "conta_corrente_id")
 	private ContaCorrente contaCorrente;
-	
-	@OneToOne
+
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "conta_poupanca_id")
 	private ContaPoupanca contaPoupanca;
 	

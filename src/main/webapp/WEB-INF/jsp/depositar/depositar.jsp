@@ -122,68 +122,31 @@ body {
                 
             </div>
         </div>
-    <div class="row">
+     <div class="row">
         <div class="col-md-6">
             <div class="card mt-5">
                 <div class="card-body">
-                <h4 class="card-title">Cartão de Crédito <i class="fas fa-credit-card"></i></h4>
-                    <p class="card-text">R$ 2,500.00</p>
-                </div>
-            <a href="#" class="btn btn-danger">Pagar</a>
-            </div>
-             <div class="card-body">
-        <a href="<c:url value='transferencia'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-success mr-3">Transferir
-        </a>
-        <a href="<c:url value='depositar'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-primary mr-3">Depositar <i class="fas fa-wallet"></i></a>
-        <a href="<c:url value='pix'/>" class="">
-            <img style="width: 50px;" src="https://devtools.com.br/img/pix/logo-pix-png-icone-520x520.png" alt="Pix">
-        </a>
-     </div>
-        </div>
-        
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-body">
-                    <h4 class="card-title">Extrato Recente <a href="<c:url value='extrato'/>"><i class="fas fa-history fa-sm"></i></a>
-                    </h4>
-                    <ul class="list-group">
-                        <li class="list-group-item">Transação 1 - R$ 100.00</li>
-                        <li class="list-group-item">Transação 2 - R$ 50.00</li>
-                        <li class="list-group-item">Transação 3 - R$ 200.00</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-         
+                    <h4 class="card-title">Depósito <i class="fas fa-wallet"></i></h4>
+                    <form action="<c:url value='depositar/realizarDeposito'/>" method="post">
+    <div class="form-group">
+        <label for="valorDeposito">Valor do Depósito</label>
+        <input type="text" class="form-control" id="valorDeposito" name="valorDeposito">
     </div>
-    
-    <div class="row mt-4">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Conta Corrente</h4>
-                    <p class="card-text">Saldo: R$ <c:out value="${usuario.getContaCorrente().getSaldo()}" /></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Conta Poupança</h4>
-                    <p class="card-text">Saldo: R$  <c:out value="${usuario.getContaPoupanca().getSaldo()}" /></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Investimentos <i class="fas fa-chart-bar"></i></h4>
-                    <p class="card-text">Tenha rendimentos a 110% do CDI</p>
-                </div>
-            </div>
-        </div>
+    <div class="form-group">
+        <label for="conta">Conta</label>
+        <select class="custom-select" id="conta" name="variacaoConta">
+            <option value="26">Conta Corrente</option>
+            <option value="51">Conta Poupança</option>
+        </select>
     </div>
-
+    <input type="hidden" name="usuarioId" value="<c:out value="${usuario.id}" />">
+    <button type="submit" class="btn btn-primary">Realizar Depósito</button>
+</form>
+                </div>
+            </div>
+        </div>
+ 
+</div>
 </div>
 
 

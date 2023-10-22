@@ -23,6 +23,7 @@ public class HomeController {
 	@Inject Validator validator;
 	
 	@Post("validausuario")
+	@Get
 	public void home(Usuario usuario) {
 		//procura o usuario no banco
 		List<Usuario> usuarios = dao.findAll();
@@ -46,5 +47,11 @@ public class HomeController {
 	public void transferencia(int id) {
 		Usuario usuario = dao.findById(id);
 		result.redirectTo(TransferenciaController.class).transferencia(usuario);
+	}
+	
+	@Get("depositar")
+	public void depositar(int id){
+		Usuario usuario = dao.findById(id);
+		result.redirectTo(DepositarController.class).depositar(usuario);
 	}
 }
