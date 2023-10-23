@@ -49,9 +49,10 @@ public class DepositarController {
 		extrato.setTipo("deposito");
 		//atribui ao usuario
 		usuario.addExtrato(extrato);
+		//atribui o usuario ao extrato
+		extrato.setUsuario(usuario);
 		//atualiza o usuario no banco
 		dao.update(usuario);
-		daoExtrato.save(extrato);
 		//redireciona para o controller
 		result.redirectTo(HomeController.class).home(usuario);
 	}
