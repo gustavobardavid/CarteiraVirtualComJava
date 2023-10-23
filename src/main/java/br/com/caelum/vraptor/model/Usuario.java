@@ -1,9 +1,13 @@
 package br.com.caelum.vraptor.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -24,11 +28,28 @@ public class Usuario extends Model {
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "conta_corrente_id")
 	private ContaCorrente contaCorrente;
-
+	
+	// Anotando a coleção que representa o relacionamento um para muitos
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Extrato> extratos;
+	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "conta_poupanca_id")
 	private ContaPoupanca contaPoupanca;
 	
+	public List<Extrato> getExtratos() {
+		return extratos;
+	}
+
+	public void setExtratos(List<Extrato> extratos) {
+		this.extratos = extratos;
+	}
+	
+	public boolean addExtrato(Extrato extrato) {
+		this.extratos.add(extrato);
+		return true;
+	}
+
 	public ContaCorrente getContaCorrente() {
 		return contaCorrente;
 	}

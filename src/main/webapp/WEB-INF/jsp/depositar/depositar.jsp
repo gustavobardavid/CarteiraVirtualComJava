@@ -118,7 +118,7 @@ body {
  <div class="col-md-12">
             <div class="card">
                 
-					<h5 class="text-center mt-2">Seja Bem-vindo, <c:out value="${usuario.nome}" />. Sentimos sua falta!</h5>
+					<h5 class="text-center mt-2"></h5>
                 
             </div>
         </div>
@@ -128,20 +128,20 @@ body {
                 <div class="card-body">
                     <h4 class="card-title">Depósito <i class="fas fa-wallet"></i></h4>
                     <form action="<c:url value='depositar/realizarDeposito'/>" method="post">
-    <div class="form-group">
-        <label for="valorDeposito">Valor do Depósito</label>
-        <input type="text" class="form-control" id="valorDeposito" name="valorDeposito">
-    </div>
-    <div class="form-group">
-        <label for="conta">Conta</label>
-        <select class="custom-select" id="conta" name="variacaoConta">
-            <option value="26">Conta Corrente</option>
-            <option value="51">Conta Poupança</option>
-        </select>
-    </div>
-    <input type="hidden" name="usuarioId" value="<c:out value="${usuario.id}" />">
-    <button type="submit" class="btn btn-primary">Realizar Depósito</button>
-</form>
+    					<div class="form-group">
+       					 	<label for="valorDeposito">Valor do Depósito</label>
+        					<input type="text" class="form-control" id="valorDeposito" name="valorDeposito">
+    					</div>
+    					<div class="form-group">
+        					<label for="conta">Conta</label>
+        					<select class="custom-select" id="conta" name="variacaoConta">
+            					<option value="26">Conta Corrente</option>
+            					<option value="51">Conta Poupança</option>
+        					</select>
+    					</div>
+    					<input type="hidden" name="usuarioId" value="<c:out value="${usuario.id}" />">
+    					<button type="submit" class="btn btn-primary">Realizar Depósito</button>
+					</form>
                 </div>
             </div>
         </div>

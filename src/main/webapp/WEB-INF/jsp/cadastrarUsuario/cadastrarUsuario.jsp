@@ -19,13 +19,95 @@
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">  
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
+<style>
+.header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+body {
+  font-size: 13px;
+  font-weight: 400;
+  font-family: monospace;
+  margin: 0;
+  background: linear-gradient(to right, #010e1f, #010e1f);
+  background-size: cover;
+  background-size: cover;
+}
+.button {
+    color: #f18324;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    max-width: 160px; 
+    width: 100%; 
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    transition: all 1s ease-in;
+    padding: 2px;
+}
 
-<body class="bg-gradient-primary">
+.button:hover {
+    color: #FF9950;
+    text-decoration: none;
+}
+
+.button svg {
+    height: 40px;
+    left: 0;
+    top: 0; 
+    position: absolute;
+    width: 100%; 
+}
+
+.button rect {      
+    fill: none;
+    stroke: #f18324;
+    stroke-width: 2;
+    stroke-dasharray: 450, 0;
+    transition: all 0.5s linear;
+}
+
+.button:hover rect {
+    stroke-width: 5;
+    stroke-dasharray: 20, 300;
+    stroke-dashoffset: 48;
+    stroke: #FF9950;
+    transition: all 2s cubic-bezier(0.22, 1, 0.25, 1);
+}
+</style>
+
+
+<body class="">
+<div class="header navbar navbar-expand-lg navbar-light bg-light">
+<span class="btn">
+    <a
+    href="#"
+    class='button'
+    >
+    <svg>
+        <rect
+        x="0" y="0" 
+        fill="none"
+        width="100%"
+        height="100%"
+        />
+    </svg>
+    PROGRAMIZE Wallet
+</a>            
+</span>
+</div>
 
   <div class="container">
 
