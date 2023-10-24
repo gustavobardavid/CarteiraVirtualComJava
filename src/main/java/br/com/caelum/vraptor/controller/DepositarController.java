@@ -35,18 +35,20 @@ public class DepositarController {
 		//busca o usuario no banco
 		usuario = dao.findById(usuarioId);
 		//deposita na cc caso a escolha seja na cc
+		//cria uma nova instancia de extrato
+		Extrato extrato = new Extrato();
+		extrato.setValor(valorDeposito);
 		if(variacaoConta == 26) {
 			usuario.getContaCorrente().depositar(valorDeposito);
+			//seta o tipo caso o deposito seja na cc
+			extrato.setTipo("Depósito Conta Corrente");
 		}
 		//deposita na cp caso a escolha seja cp
 		else if (variacaoConta == 51) {
 			usuario.getContaPoupanca().depositar(valorDeposito);
+			//seta o tipo caso o deposito seja na poupança
+			extrato.setTipo("Depósito Conta Poupança");
 		}
-		//cria uma nova instancia de extrato
-		Extrato extrato = new Extrato();
-		//seta os valores
-		extrato.setValor(valorDeposito);
-		extrato.setTipo("deposito");
 		//atribui ao usuario
 		usuario.addExtrato(extrato);
 		//atribui o usuario ao extrato

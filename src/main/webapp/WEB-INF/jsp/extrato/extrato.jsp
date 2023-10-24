@@ -118,79 +118,40 @@ body {
 </div>
 <div class="container">
  <div class="col-md-12">
+                    <button onclick="window.print()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm"></i></button>
             <div class="card">
-                
-					<h5 class="text-center mt-2">Seja Bem-vindo, <c:out value="${usuario.nome}" />. Sentimos sua falta!</h5>
-                
-            </div>
-        </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-body">
-                <h4 class="card-title">Cartão de Crédito <i class="fas fa-credit-card"></i></h4>
-                    <p class="card-text">R$ 2,500.00</p>
-                </div>
-            <a href="#" class="btn btn-danger">Pagar</a>
-            </div>
-             <div class="card-body">
-        <a href="<c:url value='transferencia'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-success mr-3">Transferir
-        </a>
-        <a href="<c:url value='depositar'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-primary mr-3">Depositar <i class="fas fa-wallet"></i></a>
-        <a href="<c:url value='pix'/>" class="">
-            <img style="width: 50px;" src="https://devtools.com.br/img/pix/logo-pix-png-icone-520x520.png" alt="Pix">
-        </a>
-     </div>
-        </div>
-        
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-body">
-                    <h4 class="card-title">Atividade Recente <a href="<c:url value='extrato'><c:param name="id" value="${usuario.id}" /></c:url>"><i class="fas fa-history fa-sm"></i></a>
+				<div class="card-body">
+                    <h4 class="card-title">Extrato Completo <a href="<c:url value='extrato'><c:param name="extratos" value="${extratos}" /></c:url>"><i class="fas fa-history fa-sm"></i></a>
                     </h4>
-                    <ul class="list-group">
-                       <c:if test="${not empty extratos}">
+                <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable">
+                  <thead>
+                    <tr>
+                     <th>Descrição</th>
+                     <th>Valor</th>
+                     <th>Data</th>
+                    </tr>
+                  </thead>
+                  <tbody> 
+                  <c:if test="${not empty extratos}">
     					<c:forEach items="${extratos}" var="extrato" begin="0" end="${extratos.size() - 1}">
-        					<li class="list-group-item">
-            					<c:out value="${extrato.getTipo()} - ${extrato.getValor()}" />
-        					</li>
+        					<tr>
+            					<td>
+            					<c:out value="${extrato.getTipo()}" />
+            					</td>
+            					<td>
+            					<c:out value="${extrato.getValor()}"/>
+            					</td>
+            					<td><c:out value="${extrato.getCreatedFormated()}"></c:out></td>
+        					</tr>
     					</c:forEach>
-					   </c:if>
-
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-         
-    </div>
-    
-    <div class="row mt-4">
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Conta Corrente</h4>
-                    <p class="card-text">Saldo: R$ <c:out value="${usuario.getContaCorrente().getSaldo()}" /></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Conta Poupança</h4>
-                    <p class="card-text">Saldo: R$  <c:out value="${usuario.getContaPoupanca().getSaldo()}" /></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Investimentos <i class="fas fa-chart-bar"></i></h4>
-                    <p class="card-text">Tenha rendimentos a 110% do CDI</p>
-                </div>
-            </div>
-        </div>
-    </div>
+					   </c:if>           
+                  </tbody>
+                </table>
+              </div>
+             </div>
+		</div>
+   </div>
 
 </div>
 
