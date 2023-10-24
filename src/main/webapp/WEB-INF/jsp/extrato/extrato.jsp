@@ -110,18 +110,12 @@ body {
 </a>            
 </span>
 </div>
-<div class="alert alert-info mt-4" id="notification">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeButton">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <strong>Atenção:</strong> Sua fatura de cartão de crédito vence em 5 dias.
-</div>
 <div class="container">
  <div class="col-md-12">
-                    <button onclick="window.print()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm"></i></button>
             <div class="card">
 				<div class="card-body">
                     <h4 class="card-title">Extrato Completo <a href="<c:url value='extrato'><c:param name="extratos" value="${extratos}" /></c:url>"><i class="fas fa-history fa-sm"></i></a>
+              		<button onclick="window.print()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm"></i></button>
                     </h4>
                 <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable">
