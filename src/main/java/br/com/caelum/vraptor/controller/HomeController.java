@@ -69,4 +69,9 @@ public class HomeController {
 	public void extrato(int id){
 		result.redirectTo(ExtratoController.class).extrato(id);
 	}
+	
+	@Get("perfil")
+	public void perfil (int id) {
+		result.redirectTo(PerfilController.class).perfil(id);
+	}
 }

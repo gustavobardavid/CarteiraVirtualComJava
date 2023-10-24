@@ -31,7 +31,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 .header {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: end;
     text-align: center;
     width: 100%;
 }
@@ -90,10 +91,41 @@ body {
     stroke: #FF9950;
     transition: all 2s cubic-bezier(0.22, 1, 0.25, 1);
 }
+.user-dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-name {
+    margin-right: 10px;
+    color:#f18324;
+}
+
+.user-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.user-dropdown:hover .user-dropdown-menu {
+    display: block;
+}
+
 </style>
 <body class="">
 <div class="header navbar navbar-expand-lg navbar-light bg-light">
-<span class="btn">
+<span class="btn col-5">
     <a
     href="#"
     class='button'
@@ -109,7 +141,28 @@ body {
     PROGRAMIZE Wallet
 </a>            
 </span>
+<div class="text-right">
+<div class="nav-item dropdown user-dropdown text-right">
+    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="user-name text-gray-800"><c:out value="${usuario.nome}"></c:out></span>
+            <i class="fas fa-user fa-2x user-name"></i>
+    </a>
+    <!-- Dropdown - User Information -->
+    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in user-dropdown-menu" aria-labelledby="userDropdown">
+        <a class="dropdown-item" href="<c:url value='perfil'> <c:param name="id" value="${usuario.id}" /></c:url>">
+            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+            Visão Geral
+        </a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            Sair
+        </a>
+    </div>
 </div>
+</div>
+</div>
+
 <div class="alert alert-info mt-4" id="notification">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeButton">
         <span aria-hidden="true">&times;</span>
@@ -220,5 +273,9 @@ body {
         document.getElementById("notification").style.display = "none";
     });
 </script>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

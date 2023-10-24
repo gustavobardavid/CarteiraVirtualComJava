@@ -1,6 +1,4 @@
 package br.com.caelum.vraptor.model;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -25,6 +23,12 @@ public class Usuario extends Model {
 	@NotEmpty(message="Campo nome não pode ser vazio")
 	private String nome;
 	
+	private String email;
+	
+	private String cidade;
+	
+	private String telefone;
+	
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "conta_corrente_id")
 	private ContaCorrente contaCorrente;
@@ -40,7 +44,15 @@ public class Usuario extends Model {
 	public List<Extrato> getExtratos() {
 		return extratos;
 	}
-
+	
+	public boolean alterarSenha(String senhaAntiga, String senhaNova) {
+		if(this.senha.equals(senhaAntiga)) {
+			this.senha = senhaNova;
+			return true;
+		}
+		return false;
+	}
+	
 	public void setExtratos(List<Extrato> extratos) {
 		this.extratos = extratos;
 	}
@@ -89,5 +101,28 @@ public class Usuario extends Model {
 		this.senha = senha;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 	
 }
