@@ -1,6 +1,8 @@
 package br.com.caelum.vraptor.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -41,10 +43,11 @@ public class CadastrarUsuarioController {
 	public void salvarUsuario(@Valid Usuario usuario) {
 		 // Valida o modelo Usuario e, em caso de erro, redireciona 
 	    validator.onErrorRedirectTo(this).cadastrarUsuario();
+	    int numeroContaAleatorio = (int) ( Math.random() * 1000);
 	    // Cria uma nova conta corrente para o usuário
-	    ContaCorrente contaCorrente = new ContaCorrente("0920-1", "26-946-x", 0, 26, 0.10, 100);
+	    ContaCorrente contaCorrente = new ContaCorrente("0920-1", numeroContaAleatorio, 0, 26, 0.10, 100);
 	    // Cria uma nova conta poupança para o usuário
-	    ContaPoupanca contaPoupanca = new ContaPoupanca("0920-1", "26-946-X", 0, 51, 0.10);
+	    ContaPoupanca contaPoupanca = new ContaPoupanca("0920-1", numeroContaAleatorio, 0, 51, 0.10);
 	    // Associe a conta corrente ao usuário
 	    usuario.setContaCorrente(contaCorrente);
 	    // Associe a conta poupança ao usuário

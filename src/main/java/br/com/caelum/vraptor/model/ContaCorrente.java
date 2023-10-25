@@ -13,7 +13,7 @@ public class ContaCorrente extends Conta {
 		return taxaManutencao;
 	}
 
-	public ContaCorrente(String agencia, String numConta, double saldo, int variacao, double taxaManutencao,
+	public ContaCorrente(String agencia, int numConta, double saldo, int variacao, double taxaManutencao,
 			double limiteCredito) {
 		super(agencia, numConta, saldo, variacao);
 		this.taxaManutencao = taxaManutencao;

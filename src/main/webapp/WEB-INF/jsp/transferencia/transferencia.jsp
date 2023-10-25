@@ -126,25 +126,32 @@ body {
             <div class="card mt-5">
                 <div class="card-body">
                     <h4 class="card-title">Digite os dados da conta destino:</h4>
-                    <form>
+                    <form action="<c:url value='transferencia/validar'/>" method="post">
   <div class="form-row align-items-center">
     <div class="col-sm-3 my-1">
+      <label class="sr-only" for="inlineFormInputGroupUsername">valor</label>
+      <div class="input-group">
+        <input type="text" name="valor" class="form-control" id="inlineFormInputGroupUsername" placeholder="Valor">
+      </div>
+    </div>
+    <div class="col-sm-3 my-1">
       <label class="sr-only" for="inlineFormInputName">Agência</label>
-      <input type="text" class="form-control" id="inlineFormInputName" placeholder="Agência">
+      <input type="text" name="agencia" class="form-control" id="inlineFormInputName" placeholder="Agência">
     </div>
     <div class="col-sm-3 my-1">
       <label class="sr-only" for="inlineFormInputGroupUsername">Conta</label>
       <div class="input-group">
-        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Conta">
+        <input type="text" name="conta" class="form-control" id="inlineFormInputGroupUsername" placeholder="Conta">
       </div>
     </div>
    <div class="col-auto my-1">
-      <label class="sr-only" for="inlineFormCustomSelect">Preference</label>
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Conta Corrente</option>
-        <option value="2">Conta Poupança</option>
+      <label class="sr-only" for="conta">Conta</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="variacaoConta">
+        <option value="26">Conta Corrente</option>
+        <option value="51">Conta Poupança</option>
       </select>
     </div>
+    <input type="hidden" name="usuarioId" value="<c:out value="${usuario.id}" />">
     <div class="col-auto my-1">
       <button type="submit" class="btn btn-primary">Transferir</button>
     </div>

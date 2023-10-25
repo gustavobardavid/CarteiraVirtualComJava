@@ -157,13 +157,13 @@ public abstract class Conta implements Depositavel, Debitavel {
 	
 	private String agencia;
 	
-	private String numConta;
+	private int numConta;
 	
 	protected double saldo;
 	
 	private int variacao;
 	
-	public Conta(String agencia, String numConta, double saldo, int variacao) {
+	public Conta(String agencia, int numConta, double saldo, int variacao) {
 		super();
 		this.agencia = agencia;
 		this.numConta = numConta;
@@ -187,10 +187,10 @@ public abstract class Conta implements Depositavel, Debitavel {
 	public void setAgencia(String agencia) {
 		this.agencia = agencia;
 	}
-	public String getNumConta() {
+	public int getNumConta() {
 		return numConta;
 	}
-	public void setNumConta(String numConta) {
+	public void setNumConta(int numConta) {
 		this.numConta = numConta;
 	}
 	public double getSaldo() {

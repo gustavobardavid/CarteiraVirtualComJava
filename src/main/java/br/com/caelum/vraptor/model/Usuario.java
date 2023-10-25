@@ -14,7 +14,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Usuario extends Model {
 
 
-	@NotEmpty(message="Campo cpf não pode estar vazio")
+	@NotEmpty(message="{cpf}")
 	private String cpf; 
 	
 	@NotEmpty(message="Campo senha não pode estar vazio")

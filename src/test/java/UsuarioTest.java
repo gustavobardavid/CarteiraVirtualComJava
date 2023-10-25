@@ -1,15 +1,13 @@
 
-import java.util.List;
-
-import br.com.caelum.vraptor.model.Extrato;
-import br.com.caelum.vraptor.model.Usuario;
 
 public class UsuarioTest {
 	public static void main(String[] args) {
-		Usuario usuario = new Usuario();
-		List<Extrato> extratos= usuario.getExtratos();
-		for (int i = extratos.size() - 1; i > extratos.size() - 3; i--) {
-			System.out.println(extratos.get(i).getValor());
-		}
+		 // Gerar um número de ponto flutuante aleatório no intervalo [0.0, 1.0)
+        int numeroAleatorio = (int) Math.random();
+        System.out.println("Número aleatório (double): " + numeroAleatorio);
+        
+        // Você pode ajustar o intervalo multiplicando e adicionando valores, por exemplo:
+        int numeroNoIntervalo = (int) ( Math.random() * 1000);
+        System.out.println("Número no intervalo: " + numeroNoIntervalo);
 	}
 }

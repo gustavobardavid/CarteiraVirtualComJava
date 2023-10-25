@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import br.com.caelum.vraptor.connection.ConnectionFactory;
+import br.com.caelum.vraptor.model.ContaCorrente;
 import br.com.caelum.vraptor.model.ContaPoupanca;
 
 public class ContaPoupancaDAO {
@@ -51,6 +52,26 @@ public class ContaPoupancaDAO {
 			em.close();
 		}
 		return contaPoupancas;
+	}
+	
+	public ContaPoupanca update(ContaPoupanca contaPoupanca) {
+	    EntityManager em = new ConnectionFactory().getConnection();
+
+	    try {
+	        em.getTransaction().begin();
+	        // Verifica se o usuário já existe no banco (se tiver um ID)
+	        if (contaPoupanca.getId() > 0) {
+	            // Atualiza o usuário existente no banco
+	            contaPoupanca = em.merge(contaPoupanca);
+	            em.getTransaction().commit();
+	        }
+	    } catch (Exception e) {
+	        System.err.println(e);
+	        em.getTransaction().rollback();
+	    } finally {
+	        em.close();
+	    }
+	    return contaPoupanca;
 	}
 	
 	public ContaPoupanca remove(Integer Id) {

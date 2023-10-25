@@ -31,7 +31,6 @@ public class AlterarSenhaController {
 			result.redirectTo(PerfilController.class).perfil(Id);;
 		}else {
 			result.redirectTo(this).alterarSenha(Id);
-			result.include("error", "Senha antiga errada");
 		}
 		
 	}

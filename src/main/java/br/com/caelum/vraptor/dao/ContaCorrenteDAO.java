@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 
 import br.com.caelum.vraptor.connection.ConnectionFactory;
 import br.com.caelum.vraptor.model.ContaCorrente;
+import br.com.caelum.vraptor.model.Usuario;
 
 public class ContaCorrenteDAO {
 	
@@ -39,7 +40,25 @@ public class ContaCorrenteDAO {
 		}
 		return contaCorrente;
 	}
-	
+	public ContaCorrente update(ContaCorrente contaCorrente) {
+	    EntityManager em = new ConnectionFactory().getConnection();
+
+	    try {
+	        em.getTransaction().begin();
+	        // Verifica se o usuário já existe no banco (se tiver um ID)
+	        if (contaCorrente.getId() > 0) {
+	            // Atualiza o usuário existente no banco
+	            contaCorrente = em.merge(contaCorrente);
+	            em.getTransaction().commit();
+	        }
+	    } catch (Exception e) {
+	        System.err.println(e);
+	        em.getTransaction().rollback();
+	    } finally {
+	        em.close();
+	    }
+	    return contaCorrente;
+	}
 	public List<ContaCorrente> findAll(){
 		EntityManager em = new ConnectionFactory().getConnection();
 		List<ContaCorrente> contaCorrentes = null;

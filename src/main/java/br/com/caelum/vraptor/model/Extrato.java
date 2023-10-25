@@ -11,7 +11,7 @@ public class Extrato extends Model {
 	
 	private String tipo;
 	
-	private String destino;
+	private int destino;
 	
 	// Definindo o relacionamento muitos para um com a entidade Usuario
 	@ManyToOne
@@ -42,12 +42,12 @@ public class Extrato extends Model {
 		this.tipo = tipo;
 	}
 	
-	public String getDestino() {
+	public int getDestino() {
 		return destino;
 	}
 	
-	public void setDestino(String destino) {
-		this.destino = destino;
+	public void setDestino(int i) {
+		this.destino = i;
 	}
 	
 }
