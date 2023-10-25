@@ -74,4 +74,9 @@ public class HomeController {
 	public void perfil (int id) {
 		result.redirectTo(PerfilController.class).perfil(id);
 	}
+	
+	@Get("sair")
+	public void sair() {
+		result.redirectTo(LoginController.class).login();
+	}
 }

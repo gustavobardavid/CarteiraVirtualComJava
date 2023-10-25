@@ -57,7 +57,7 @@ public class TransferenciaController {
 				if(contaPoupanca.getNumConta() == conta) {
 					remetente.getContaPoupanca().transferir(contaPoupanca, valor);
 					extrato.setValor(valor);
-					extrato.setTipo("Transfencia para Conta Corrente");
+					extrato.setTipo("Transfencia para Conta Poupanca");
 					extrato.setDestino(contaPoupanca.getNumConta());
 					daoCp.update(contaPoupanca);
 				}

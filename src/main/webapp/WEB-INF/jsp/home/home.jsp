@@ -154,7 +154,7 @@ body {
             Visão Geral
         </a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="<c:url value='login'/>" data-toggle="modal" data-target="#logoutModal">
+        <a class="dropdown-item" href="<c:url value='sair'/>" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
             Sair
         </a>
@@ -203,12 +203,17 @@ body {
                     </h4>
                     <ul class="list-group">
                        <c:if test="${not empty extratos}">
-    					<c:forEach items="${extratos}" var="extrato" begin="0" end="${extratos.size() - 1}">
-        					<li class="list-group-item">
-            					<c:out value="${extrato.getTipo()} - ${extrato.getValor()}" />
-        					</li>
-    					</c:forEach>
-					   </c:if>
+    <c:set var="contador" value="0" scope="page" />
+    <c:forEach items="${extratos}" var="extrato" begin="0" end="${extratos.size() - 1}">
+        <c:if test="${contador < 3}">
+            <li class="list-group-item">
+                <c:out value="${extrato.getTipo()} - ${extrato.getValor()}" />
+            </li>
+            <c:set var="contador" value="${contador + 1}" scope="page" />
+        </c:if>
+    </c:forEach>
+</c:if>
+
 
 
                     </ul>
