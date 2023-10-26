@@ -23,7 +23,7 @@
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 
 </head>
 <style>
@@ -36,7 +36,6 @@ header {
 body {
   font-size: 13px;
   font-weight: 400;
-  font-family: monospace;
   margin: 0;
   color: #ffffff;
   background: linear-gradient(to right, #010e1f, #010e1f);
@@ -47,6 +46,7 @@ body {
     color: #f18324;
     cursor: pointer;
     font-size: 1rem;
+    font-family: monospace;
     line-height: 2.5rem;
     max-width: 160px; 
     width: 100%; 
@@ -115,18 +115,16 @@ body {
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="col-lg-4">
  
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-6">
+             
+              <div class="col">
                 <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Login!</h1>
-                  </div>
+                  
                   	<c:if test="${not empty errors}">
 				<div class="alert alert-danger" role="alert">
 					<c:forEach var="error" items="${errors}">
@@ -134,7 +132,7 @@ body {
 					</c:forEach>
 				</div>
 			</c:if>
-                  <form class="user" method="post" action="<c:url value='home/validausuario'/>">
+                  <form class="user mx-auto w-100 w-md-50" method="post" action="<c:url value='home/validausuario'/>">
                   
                     <div class="form-group">
                       <input name="usuario.cpf" type="text" class="form-control form-control-user" placeholder="Cpf">
@@ -142,18 +140,21 @@ body {
                     <div class="form-group">
                       <input name="usuario.senha" type="password" class="form-control form-control-user" placeholder="Senha">
                     </div>
+                    <div class="form-group">
+    				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+    				<label class="form-check-label" style="color:#000" for="exampleCheck1">Lembre de mim</label>
+  					</div>
                     <button type="submit" class="btn btn-primary btn-user btn-block">
                       Entrar
                     </button>
                     <hr>
-                  </form>
-                    <a href="<c:url value='cadastrarUsuario'/>">
-                      <button class="btn btn-google btn-user btn-block">
+                  </form>                  
+                    <a class="mx-auto w-100 w-md-50" style="text-decoration:none" href="<c:url value='cadastrarUsuario'/>">
+                      <button class="btn btn-danger btn-user btn-block">
                       	Cadastrar
                       </button>
                     </a>
                   <hr>
-                  
                 </div>
               </div>
             </div>
@@ -183,6 +184,7 @@ body {
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/carousel.js"></script>
 
 </body>
 

@@ -12,7 +12,13 @@
 	</properties>
 
 	<dependencies>
-	
+		<!--Dependencia do lombok para tornar a clase mais limpa-->
+		<dependency>
+    		<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok</artifactId>
+    		<version>1.18.30</version>
+    		<scope>provided</scope>
+		</dependency>
 		<!-- Dependencia do Framework do VRaptor -->
 		<dependency>
 			<groupId>br.com.caelum</groupId>
@@ -190,7 +196,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>projetovraptor</finalName>
+		<finalName>wallet</finalName>
 		<outputDirectory>${basedir}/src/main/webapp/WEB-INF/classes</outputDirectory>
 		<plugins>
 			<plugin>

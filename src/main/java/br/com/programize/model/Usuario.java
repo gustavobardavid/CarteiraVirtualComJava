@@ -1,6 +1,7 @@
-package br.com.caelum.vraptor.model;
+package br.com.programize.model;
 import java.util.List;
-
+import lombok.Getter;
+import lombok.Setter;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +11,8 @@ import javax.persistence.OneToOne;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+@Getter
+@Setter
 @Entity
 public class Usuario extends Model {
 
@@ -41,10 +44,6 @@ public class Usuario extends Model {
 	@JoinColumn(name = "conta_poupanca_id")
 	private ContaPoupanca contaPoupanca;
 	
-	public List<Extrato> getExtratos() {
-		return extratos;
-	}
-	
 	public boolean alterarSenha(String senhaAntiga, String senhaNova) {
 		if(this.senha.equals(senhaAntiga)) {
 			this.senha = senhaNova;
@@ -52,77 +51,8 @@ public class Usuario extends Model {
 		}
 		return false;
 	}
-	
-	public void setExtratos(List<Extrato> extratos) {
-		this.extratos = extratos;
-	}
-	
 	public boolean addExtrato(Extrato extrato) {
 		this.extratos.add(extrato);
 		return true;
 	}
-
-	public ContaCorrente getContaCorrente() {
-		return contaCorrente;
-	}
-
-	public void setContaCorrente(ContaCorrente contaCorrente) {
-		this.contaCorrente = contaCorrente;
-	}
-
-	public ContaPoupanca getContaPoupanca() {
-		return contaPoupanca;
-	}
-
-	public void setContaPoupanca(ContaPoupanca contaPoupanca) {
-		this.contaPoupanca = contaPoupanca;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	
 }

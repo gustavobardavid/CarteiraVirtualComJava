@@ -1,0 +1,248 @@
+	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  margin: 10px 0;
+}
+
+body {
+  font-size: 13px;
+  font-weight: 400;
+  font-family: monospace;
+  margin: 0;
+  color: #ffffff;
+  background: linear-gradient(to right, #010e1f, #010e1f);
+  background-size: cover;
+  background-size: cover;
+}
+
+.grid {
+	display:grid;
+	gap:10px;
+	grid-template-columns:repeat(2,1fr);
+}
+.descricao {
+	background: url(https://img.freepik.com/fotos-gratis/reuniao-de-negocios-vista-frontal-com-cafe_23-2148366527.jpg?w=1060&t=st=1698278194~exp=1698278794~hmac=03f5a29e7aca4144c5b8643857306b01880d0a36d8f0fe98a3d9e8c80d0b5abe);
+	background-size: cover; 
+    background-position: center;
+    top: 20px;
+  	width: 700px;
+  	height: 500px;
+  	overflow: hidden;
+  	position: relative;
+  	margin: 50px auto;
+  	border-radius: 10px;
+}
+h1 {
+  font-family: monospace;
+  width: 50%;
+  margin: 10px 200px;
+  text-align: center;
+  border-top: 5px solid #ffffff;
+  background: linear-gradient(to left, #f18324, #f18324);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  color: #0d2226;
+}
+
+h2 {
+  text-align: center;
+  color: #d2d0e6;
+  margin: 25px 25px;
+  opacity: 0.7;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h3 {
+  color: #f18324;
+}
+
+
+footer {
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.footer-top-wrapper {
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 48px;
+  margin: 0 auto;
+  padding: 16px;
+  min-height: 160px;
+}
+
+.footer-top-wrapper > section {
+  width: 100%;
+}
+
+footer h2 {
+  text-align: center;
+  color: #d2d0e6;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  opacity: 0.7;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+menu li {
+  margin-bottom: 0px;
+}
+
+nav {
+  font-family: monospace;
+  font: bold;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-left: 10px;
+  padding: 1px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+nav li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+nav li span {
+  font-size: small;
+}
+
+nav li a:hover {
+  text-decoration: none;
+  color: #f18324;
+}
+
+.banner {
+  top: 20px;
+  width: 700px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.slide1 {
+  background-image: url(https://img.freepik.com/fotos-gratis/com-os-olhos-fechados-uma-jovem-bonita-impressionada-segurando-dinheiro-isolado-na-parede-azul_141793-78751.jpg?w=1060&t=st=1698276672~exp=1698277272~hmac=d5c09817d018f898d6bfd50914305f17bc6ea37c036c671cafefa64c2eeb256c);
+  animation-delay: 0s;
+  opacity: 1;
+}
+
+.slide2 {
+  background-image: url(https://img.freepik.com/vetores-gratis/os-gerentes-financeiros-que-trabalham-com-clientes-isolaram-a-ilustracao-vetorial-plana-desenhos-animados-pessoas-sentadas-no-escritorio-do-banco-para-troca-de-dinheiro_74855-8370.jpg?w=1380&t=st=1698276137~exp=1698276737~hmac=65ae2c0b1f85fa587f04fc66f28b956d8073794a8f2df89dd923b573d8826184);
+  animation-delay: 5s;
+}
+
+.slide3 {
+  background-image: url(https://img.freepik.com/fotos-gratis/mealheiro-rosa-praia-viagens-ferias-poupanca-oculos-de-sol_1101-2839.jpg?w=740&t=st=1698276430~exp=1698277030~hmac=befb407874a5a95756580ec890b5889ad44dff06219eddb0fae97391151c7fbf);
+  animation-delay: 5s;
+}
+
+
+@keyframes slideAnimation {
+  0%, 100% {
+      opacity: 0;
+  }
+  10%, 90% {
+      opacity: 1;
+  }
+}
+
+/* Estilos para o banner do carrossel */
+.banner2 {
+  top: 20px;
+  width: 100%; /* Preencher a largura da janela */
+  height: 400px; /* Ajuste a altura conforme necessário */
+  overflow: hidden;
+  position: relative;
+  margin: 50px auto;
+  border-radius: 10px;
+  background-color: #333; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+}
+
+/* Estilos para as descrições dentro do carrossel */
+.slideText {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 1s;
+}
+.slide6 {
+  animation-delay: 0s;
+  opacity: 1;
+  background-color: #007BFF; /* Cor de fundo específica para este slide */
+  color: #fff; /* Cor do texto específica para este slide */
+}
+
+.slide4 {
+  animation-delay: 5s;
+  background-color: #E74C3C; /* Cor de fundo específica para este slide */
+  color: #fff; /* Cor do texto específica para este slide */
+}
+.slide5 {
+  animation-delay: 5s;
+  background-color: #020400; /* Cor de fundo específica para este slide */
+  color: #fff; /* Cor do texto específica para este slide */
+}
+
+@keyframes slideAnimation {
+  0%, 100% {
+      opacity: 0;
+  }
+  10%, 90% {
+      opacity: 1;
+  }
+}

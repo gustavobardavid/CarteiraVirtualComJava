@@ -1,20 +1,21 @@
-package br.com.caelum.vraptor.dao;
+package br.com.programize.dao;
 
 import java.util.List;
 
-
 import javax.persistence.EntityManager;
 
-import br.com.caelum.vraptor.connection.ConnectionFactory;
-import br.com.caelum.vraptor.model.Extrato;
-public class ExtratoDAO {
+import br.com.programize.connection.ConnectionFactory;
+import br.com.programize.model.ContaCorrente;
+import br.com.programize.model.ContaPoupanca;
+
+public class ContaPoupancaDAO {
 	
-	public Extrato save(Extrato extrato) {
+	public ContaPoupanca save(ContaPoupanca contaPoupanca) {
 		EntityManager em = new ConnectionFactory().getConnection();
 		
 		try {
 			em.getTransaction().begin();
-			em.persist(extrato);
+			em.persist(contaPoupanca);
 			em.getTransaction().commit();
 			
 		} catch (Exception e) {
@@ -22,46 +23,46 @@ public class ExtratoDAO {
 		}finally {
 			em.close();
 		}
-		return extrato;
+		return contaPoupanca;
 	}
 	
-	public Extrato findById(Integer Id) {
+	public ContaPoupanca findById(Integer Id) {
 		
 		EntityManager em = new ConnectionFactory().getConnection();
-		Extrato extrato = null;
+		ContaPoupanca contaPoupanca = null;
 		
 		try {
-			extrato = em.find(Extrato.class, Id);
+			contaPoupanca = em.find(ContaPoupanca.class, Id);
 		} catch (Exception e) {
 			System.err.println(e);
 		}finally {
 			em.close();
 		}
-		return extrato;
+		return contaPoupanca;
 	}
 	
-	public List<Extrato> findAll(){
+	public List<ContaPoupanca> findAll(){
 		EntityManager em = new ConnectionFactory().getConnection();
-		List<Extrato> extratos = null;
+		List<ContaPoupanca> contaPoupancas = null;
 		try {
-			extratos = em.createQuery("from Extrato p").getResultList();
+			contaPoupancas = em.createQuery("from ContaPoupanca p").getResultList();
 		} catch (Exception e) {
 			System.err.println(e);
 		}finally{
 			em.close();
 		}
-		return extratos;
+		return contaPoupancas;
 	}
 	
-	public Extrato update(Extrato extrato) {
+	public ContaPoupanca update(ContaPoupanca contaPoupanca) {
 	    EntityManager em = new ConnectionFactory().getConnection();
 
 	    try {
 	        em.getTransaction().begin();
 	        // Verifica se o usuário já existe no banco (se tiver um ID)
-	        if (extrato.getId() > 0) {
+	        if (contaPoupanca.getId() > 0) {
 	            // Atualiza o usuário existente no banco
-	            extrato = em.merge(extrato);
+	            contaPoupanca = em.merge(contaPoupanca);
 	            em.getTransaction().commit();
 	        }
 	    } catch (Exception e) {
@@ -70,17 +71,17 @@ public class ExtratoDAO {
 	    } finally {
 	        em.close();
 	    }
-	    return extrato;
+	    return contaPoupanca;
 	}
 	
-	public Extrato remove(Integer Id) {
+	public ContaPoupanca remove(Integer Id) {
 		
 		EntityManager em = new ConnectionFactory().getConnection();
-		Extrato extrato = null;
+		ContaPoupanca contaPoupanca = null;
 		try {
-			extrato = em.find(Extrato.class, Id );
+			contaPoupanca = em.find(ContaPoupanca.class, Id );
 			em.getTransaction().begin();
-			em.remove(extrato);
+			em.remove(contaPoupanca);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			System.err.println(e);
@@ -88,6 +89,7 @@ public class ExtratoDAO {
 		} finally {
 			em.close();
 		}
-		return extrato;
+		return contaPoupanca;
 	}
+
 }

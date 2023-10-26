@@ -1,6 +1,7 @@
-package br.com.caelum.vraptor.dao;
+package br.com.programize.dao;
 import javax.persistence.EntityManager;
-import br.com.caelum.vraptor.model.Model;
+
+import br.com.programize.model.Model;
 
 /**
  * Classe Generica que mantem metodos basicos de persistencia de objetos

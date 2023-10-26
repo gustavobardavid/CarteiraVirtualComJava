@@ -1,8 +1,6 @@
-package br.com.caelum.vraptor.model;
-
+package br.com.programize.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,18 +10,14 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
-import br.com.caelum.vraptor.interfaces.Debitavel;
-import br.com.caelum.vraptor.interfaces.Depositavel;
-
-//Super classe que agrega atributos comuns às contas
+import org.hibernate.validator.constraints.NotEmpty;
+//Super classe que agrega atributos comuns aos modelos
 @MappedSuperclass
 //@Audited(withModifiedFlag=true)
-public abstract class Conta implements Depositavel, Debitavel {
-	
+public abstract class Model {
+
 	@Column
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -155,56 +149,7 @@ public abstract class Conta implements Depositavel, Debitavel {
 		this.motivoInativacao = motivoInativacao;
 	}
 	
-	private String agencia;
 	
-	private int numConta;
 	
-	protected double saldo;
-	
-	private int variacao;
-	
-	public Conta(String agencia, int numConta, double saldo, int variacao) {
-		super();
-		this.agencia = agencia;
-		this.numConta = numConta;
-		this.saldo = saldo;
-		this.variacao = variacao;
-	}
-	
-	 public Conta() {
-	        // Construtor padrão sem argumentos
-	 }
-	 
-	public boolean depositar(double valor){
-        //TODO: Verificar problemas no preenchimento
-        saldo += valor;
-        return true;
-    }
-	
-	public String getAgencia() {
-		return agencia;
-	}
-	public void setAgencia(String agencia) {
-		this.agencia = agencia;
-	}
-	public int getNumConta() {
-		return numConta;
-	}
-	public void setNumConta(int numConta) {
-		this.numConta = numConta;
-	}
-	public double getSaldo() {
-		return saldo;
-	}
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
-	public int getVariacao() {
-		return variacao;
-	}
-	public void setVariacao(int variacao) {
-		this.variacao = variacao;
-	}
 	
 }
-

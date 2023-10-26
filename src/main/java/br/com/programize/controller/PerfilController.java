@@ -1,4 +1,4 @@
-package br.com.caelum.vraptor.controller;
+package br.com.programize.controller;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -7,9 +7,9 @@ import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
-import br.com.caelum.vraptor.dao.UsuarioDAO;
-import br.com.caelum.vraptor.model.Usuario;
 import br.com.caelum.vraptor.validator.Validator;
+import br.com.programize.dao.UsuarioDAO;
+import br.com.programize.model.Usuario;
 
 @Path("perfil")
 @Controller

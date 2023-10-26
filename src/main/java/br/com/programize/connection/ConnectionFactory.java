@@ -1,4 +1,4 @@
-package br.com.caelum.vraptor.connection;
+package br.com.programize.connection;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

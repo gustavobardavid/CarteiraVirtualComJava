@@ -1,7 +1,11 @@
-package br.com.caelum.vraptor.model;
+package br.com.programize.model;
 
 import javax.persistence.Entity;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 public class ContaPoupanca extends Conta {
 	
@@ -15,7 +19,7 @@ public class ContaPoupanca extends Conta {
 	 public ContaPoupanca() {
 	        // Construtor padrão sem argumentos
 	    }
-
+	
 	public boolean sacar(double valor) {
 	        //TODO: verificar as restrições
 	        if(valor <= saldo){

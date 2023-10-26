@@ -1,12 +1,12 @@
-package br.com.caelum.vraptor.dao;
+package br.com.programize.dao;
 
 import java.util.List;
 
 
 import javax.persistence.EntityManager;
 
-import br.com.caelum.vraptor.connection.ConnectionFactory;
-import br.com.caelum.vraptor.model.Usuario;
+import br.com.programize.connection.ConnectionFactory;
+import br.com.programize.model.Usuario;
 public class UsuarioDAO {
 	
 	public Usuario save(Usuario Usuario) {

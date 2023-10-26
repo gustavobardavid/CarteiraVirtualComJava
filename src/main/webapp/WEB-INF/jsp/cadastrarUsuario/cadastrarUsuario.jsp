@@ -31,10 +31,13 @@
     text-align: center;
     width: 100%;
 }
+h1 {
+	font-family: sans-serif;
+}
 body {
   font-size: 13px;
   font-weight: 400;
-  font-family: monospace;
+  font-family: sans-serif;
   margin: 0;
   background: linear-gradient(to right, #010e1f, #010e1f);
   background-size: cover;
@@ -47,6 +50,7 @@ body {
     line-height: 2.5rem;
     max-width: 160px; 
     width: 100%; 
+    font-family:monospace;
     letter-spacing: 0.3rem;
     font-weight: 600;
     position: relative;
@@ -109,12 +113,12 @@ body {
 </span>
 </div>
 
-  <div class="container">
+  <div class="container col-lg-6">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
-        <div class="row">	
+        <div class="">	
           <div class="">
             <div class="p-5">
               <div class="text-center">
@@ -128,46 +132,50 @@ body {
 					</c:forEach>
 				</div>
 			</c:if>
-              <form class="user"  method="post" action="<c:url value='cadastrarUsuario/salvausuario'/>">
-                <div class="form-group row">
-                  <div class="col-sm-12 mb-3 mb-sm-0">
-                    <input name="usuario.nome" type="text" class="form-control form-control-user" placeholder="Nome">
-                  </div>
-                 
-                </div>
-                <div class="form-group row">
-                <div class="col-sm-12 mb-3 mb-sm-0">
-                  <input name="usuario.cpf" type="text" class="form-control form-control-user" placeholder="Cpf">
-                 </div>
-                </div>
-                <div class="form-group row">
-                <div class="col-sm-12 mb-3 mb-sm-0">
-                  <input name="usuario.email" type="text" class="form-control form-control-user" placeholder="Email">
-                 </div>
-                </div>
-                <div class="form-group row">
-                <div class="col-sm-12 mb-3 mb-sm-0">
-                  <input name="usuario.telefone" type="text" class="form-control form-control-user" placeholder="Telefone">
-                 </div>
-                </div>
-                <div class="form-group row">
-                <div class="col-sm-12 mb-3 mb-sm-0">
-                  <input name="usuario.cidade" type="text" class="form-control form-control-user" placeholder="Cidade">
-                 </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-sm-12 mb-3 mb-sm-0">
-                    <input name="usuario.senha" type="password" class="form-control form-control-user" placeholder="Senha">
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-user btn-block">
-                  Cadastrar
-                </button>   
+              		<form class="user mx-auto w-100 w-md-50" method="post" action="<c:url value='cadastrarUsuario/salvausuario'/>">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">CPF</label>
+      <input type="text" name="usuario.cpf" class="form-control" id="inputEmail4" placeholder="Apenas números">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Senha</label>
+      <input type="password" name="usuario.senha" class="form-control" id="inputPassword4" placeholder="Mínimo 8 digitos">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Nome</label>
+    <input type="text" name="usuario.nome" class="form-control" id="inputAddress" placeholder="Digite seu nome completo. Sem abreviações">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Email</label>
+    <input type="email" name="usuario.name" class="form-control" id="inputAddress2" placeholder="example@example.com">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Cidade</label>
+      <input type="text" name="usuario.cidade" class="form-control" id="inputCity">
+    </div>
     
-              </form>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Telefone</label>
+      <input type="text" name="usuario.telefone" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Lembrar de mim
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary btn-user btn-block">Cadastrar-se</button>
+</form>
+             
               <hr>
               <div class="text-center">
-                <a class="small" href="<c:url value='login'/>">Ja tem uma conta? Faça Login!</a>
+                <a class="" href="<c:url value='login'/>">Ja tem uma conta? Faça Login!</a>
               </div>
             </div>
           </div>

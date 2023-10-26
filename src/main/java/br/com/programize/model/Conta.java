@@ -1,6 +1,8 @@
-package br.com.caelum.vraptor.model;
+package br.com.programize.model;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+//persistência
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,14 +12,34 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+//anotações
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.validator.constraints.NotEmpty;
-//Super classe que agrega atributos comuns aos modelos
-@MappedSuperclass
-//@Audited(withModifiedFlag=true)
-public abstract class Model {
+//interfaces
+import br.com.programize.interfaces.Debitavel;
+import br.com.programize.interfaces.Depositavel;
+//lombok
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
+//Super classe que agrega atributos comuns às contas
+//@Audited(withModifiedFlag=true)
+@MappedSuperclass
+@Getter
+@Setter
+public abstract class Conta implements Depositavel, Debitavel {
+	
+	private String agencia;
+	
+	private int numConta;
+	
+	protected double saldo;
+	
+	private int variacao;
+	
+	
 	@Column
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -41,38 +63,13 @@ public abstract class Model {
 	
 	@PrePersist
     protected void onCreate() {
-    updated = created = new Date();
+		updated = created = new Date();
     }
 
     @PreUpdate
     protected void onUpdate() {
-    updated = new Date();
+    	updated = new Date();
     }
-    
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public Date getCreated() {
-		return created;
-	}
-	
-	public void setCreated(Date created) {
-		this.created = created;
-	}
-	
-	public Date getUpdated() {
-		return updated;
-	}
-	
-	public void setUpdated(Date updated) {
-		this.updated = updated;
-	}
-	
 	
 	/**
 	 * retorna um timestamp de criacao do modelo no formato
@@ -132,24 +129,25 @@ public abstract class Model {
 	        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
 	        return sdf.format(getCreated());
 	}
+	 
+	public boolean depositar(double valor){
+        //TODO: Verificar problemas no preenchimento
+        saldo += valor;
+        return true;
+    }
 
-	public boolean isAtivo() {
-		return ativo;
+
+	public Conta(String agencia, int numConta, double saldo, int variacao) {
+		super();
+		this.agencia = agencia;
+		this.numConta = numConta;
+		this.saldo = saldo;
+		this.variacao = variacao;
 	}
 
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
+	public Conta() {
+		//Construtor padrão sem argumentos
 	}
-
-	public String getMotivoInativacao() {
-		return motivoInativacao;
-	}
-
-	public void setMotivoInativacao(String motivoInativacao) {
-		this.motivoInativacao = motivoInativacao;
-	}
-	
-	
-	
 	
 }
+
