@@ -18,7 +18,11 @@ Depositar
 Sacar
 
 Ver Detalhes da Conta
+## Screenshots
 
+![Cadastro](./public/cadastro.png)
+
+![Home](./public/home.png)
 ## Contribuições e Feedback 🤝🔧
 Contribuições são bem-vindas! Se você encontrar problemas ou tiver sugestões para melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
