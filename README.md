@@ -1,6 +1,7 @@
 # Wallet - Uma Carteira Virtual feita em Java 5
 
 ![LandingPage](public/Captura%20de%20tela%202023-10-26%20141932.png)
+
 ### Bem-vindo à Programize Wallet desenvolvida em Java! Este sistema foi criado para atender aos requisitos do projeto final da Disciplina de Programação Orientada a Objetos do IFPB - Campus Cajazeiras.
 
 ## Funcionalidades 🔍📋
