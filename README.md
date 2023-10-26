@@ -1,4 +1,4 @@
-# Wallet - Uma Carteira Virtual feita em Java 🌿💊
+# Wallet - Uma Carteira Virtual feita em Java 
 
 ### Bem-vindo à Programize Wallet desenvolvida em Java! Este sistema foi criado para atender aos requisitos do projeto final da Disciplina de Programação Orientada a Objetos do IFPB - Campus Cajazeiras.
 
