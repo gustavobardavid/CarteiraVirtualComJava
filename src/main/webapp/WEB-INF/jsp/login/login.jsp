@@ -37,6 +37,7 @@ body {
   font-size: 13px;
   font-weight: 400;
   margin: 0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #ffffff;
   background: linear-gradient(to right, #010e1f, #010e1f);
   background-size: cover;

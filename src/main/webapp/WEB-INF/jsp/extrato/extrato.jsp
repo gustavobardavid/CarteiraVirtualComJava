@@ -38,7 +38,7 @@
 body {
   font-size: 13px;
   font-weight: 400;
-  font-family: monospace;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin: 0;
   background: linear-gradient(to right, #010e1f, #010e1f);
   background-size: cover;
@@ -49,6 +49,7 @@ body {
     cursor: pointer;
     font-size: 1rem;
     line-height: 2.5rem;
+     font-family: monospace;
     max-width: 160px; 
     width: 100%; 
     letter-spacing: 0.3rem;
@@ -92,24 +93,6 @@ body {
 }
 </style>
 <body class="">
-<div class="header navbar navbar-expand-lg navbar-light bg-light">
-<span class="btn">
-    <a
-    href="#"
-    class='button'
-    >
-    <svg>
-        <rect
-        x="0" y="0" 
-        fill="none"
-        width="100%"
-        height="100%"
-        />
-    </svg>
-    PROGRAMIZE Wallet
-</a>            
-</span>
-</div>
 <hr>
 <div class="container">
  <div class="col-md-12">
@@ -149,19 +132,32 @@ body {
    </div>
 
 </div>
-
-
 <footer class="footer text-center mt-3">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+<span class="btn">
+    <a
+    href="#"
+    class='button'
+    >
+    <svg>
+        <rect
+        x="0" y="0" 
+        fill="none"
+        width="100%"
+        height="100%"
+        />
+    </svg>
+    PROGRAMIZE Wallet
+</a>            
+</span>
     <p class="text-muted">&copy; 2023 Programize Solutions</p>
+</div>
     <p class="text-muted">Contato: <a href="mailto:contato@programize.com">contato@programize.com</a></p>
     <p class="text-muted">
         <a href="/termos" class="text-primary">Termos de Uso</a> |
         <a href="/privacidade" class="text-primary">Política de Privacidade</a>
     </p>
 </footer>
-
-   
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

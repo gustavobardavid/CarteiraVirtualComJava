@@ -28,7 +28,7 @@ h1 {
 body {
   font-size: 13px;
   font-weight: 400;
-  font-family: sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin: 0;
   background: linear-gradient(to right, #010e1f, #010e1f);
   background-size: cover;

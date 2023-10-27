@@ -36,7 +36,7 @@
 body {
   font-size: 13px;
   font-weight: 400;
-  font-family: monospace;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin: 0;
   background: linear-gradient(to right, #010e1f, #010e1f);
   background-size: cover;
@@ -47,6 +47,7 @@ body {
     cursor: pointer;
     font-size: 1rem;
     line-height: 2.5rem;
+    font-family: monospace;
     max-width: 160px; 
     width: 100%; 
     letter-spacing: 0.3rem;
@@ -90,24 +91,6 @@ body {
 }
 </style>
 <body class="">
-<div class="header navbar navbar-expand-lg navbar-light bg-light">
-<span class="btn">
-    <a
-    href="#"
-    class='button'
-    >
-    <svg>
-        <rect
-        x="0" y="0" 
-        fill="none"
-        width="100%"
-        height="100%"
-        />
-    </svg>
-    PROGRAMIZE Wallet
-</a>            
-</span>
-</div>
 <div class="alert alert-info mt-4" id="notification">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeButton">
         <span aria-hidden="true">&times;</span>
@@ -116,13 +99,9 @@ body {
 </div>
 <div class="container">
  <div class="col-md-12">
-            <div class="card">
-                
-					<h5 class="text-center mt-2"></h5>
-                
-            </div>
+            
         </div>
-     <div class="row">
+     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-5">
                 <div class="card-body">
@@ -151,7 +130,25 @@ body {
 
 
 <footer class="footer text-center mt-3">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+<span class="btn">
+    <a
+    href="#"
+    class='button'
+    >
+    <svg>
+        <rect
+        x="0" y="0" 
+        fill="none"
+        width="100%"
+        height="100%"
+        />
+    </svg>
+    PROGRAMIZE Wallet
+</a>            
+</span>
     <p class="text-muted">&copy; 2023 Programize Solutions</p>
+</div>
     <p class="text-muted">Contato: <a href="mailto:contato@programize.com">contato@programize.com</a></p>
     <p class="text-muted">
         <a href="/termos" class="text-primary">Termos de Uso</a> |

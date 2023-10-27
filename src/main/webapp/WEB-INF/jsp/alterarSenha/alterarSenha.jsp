@@ -92,27 +92,10 @@ body {
 }
 </style>
 <body class="">
-<div class="header navbar navbar-expand-lg navbar-light bg-light">
-<span class="btn">
-    <a
-    href="#"
-    class='button'
-    >
-    <svg>
-        <rect
-        x="0" y="0" 
-        fill="none"
-        width="100%"
-        height="100%"
-        />
-    </svg>
-    PROGRAMIZE Wallet
-</a>            
-</span>
-</div>
+
 <hr>
 <div class="container">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-5">
                 <div class="card-body">
@@ -143,7 +126,25 @@ body {
 
 
 <footer class="footer text-center mt-3">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+<span class="btn">
+    <a
+    href="#"
+    class='button'
+    >
+    <svg>
+        <rect
+        x="0" y="0" 
+        fill="none"
+        width="100%"
+        height="100%"
+        />
+    </svg>
+    PROGRAMIZE Wallet
+</a>            
+</span>
     <p class="text-muted">&copy; 2023 Programize Solutions</p>
+</div>
     <p class="text-muted">Contato: <a href="mailto:contato@programize.com">contato@programize.com</a></p>
     <p class="text-muted">
         <a href="/termos" class="text-primary">Termos de Uso</a> |
