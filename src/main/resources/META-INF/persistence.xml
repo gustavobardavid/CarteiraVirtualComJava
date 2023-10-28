@@ -12,9 +12,9 @@
 
         <properties>
              <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://dpg-ckta6oo168ec73bnp900-a.oregon-postgres.render.com/dbwallet_nyld" /> <!-- 167.114.67.6 -->
-            <property name="javax.persistence.jdbc.user" value="ba" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="Mtde49qwK3fKnHFCbwp5qY9501XX9MF5" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/banco" /> <!-- 167.114.67.6 -->
+            <property name="javax.persistence.jdbc.user" value="postgres" /> <!-- DB User -->
+            <property name="javax.persistence.jdbc.password" value="admin" /> <!-- DB Password -->
 
 	    	<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/> <!-- DB Dialect -->
             <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->

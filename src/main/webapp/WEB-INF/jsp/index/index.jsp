@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Programize Wallet </title>
 </head>
 <style>
@@ -198,7 +198,7 @@ nav li a:hover {
 }
 
 .slide3 {
-  background-image: url (img/pig.jpg);
+  background-image: url(img/pig.jpg);
   animation-delay: 5s;
 }
 

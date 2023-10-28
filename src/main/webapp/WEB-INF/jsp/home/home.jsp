@@ -187,7 +187,7 @@ body {
         <a href="<c:url value='transferencia'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-success mr-3">Transferir
         </a>
         <a href="<c:url value='depositar'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-primary mr-3">Depositar <i class="fas fa-wallet"></i></a>
-        <a href="<c:url value='pix'/>" class="">
+        <a href="<c:url value='pix'><c:param name="id" value="${usuario.id}" /></c:url>" class="">
             <img style="width: 50px;" src="https://devtools.com.br/img/pix/logo-pix-png-icone-520x520.png" alt="Pix">
         </a>
      </div>

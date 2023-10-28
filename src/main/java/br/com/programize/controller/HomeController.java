@@ -81,7 +81,7 @@ public class HomeController {
 	}
 	
 	@Get("pix")
-	public void pix() {
-		result.redirectTo(PixController.class).pix();
+	public void pix(int id) {
+		result.redirectTo(PixController.class).pix(id);
 	}
 }

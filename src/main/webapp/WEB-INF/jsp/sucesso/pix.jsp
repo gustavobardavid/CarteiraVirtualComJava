@@ -37,6 +37,10 @@ body {
   background-size: cover;
   background-size: cover;
 }
+
+.img{
+	width:400px;
+}
 .button {
     color: #f18324;
     cursor: pointer;
@@ -91,64 +95,20 @@ body {
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-5">
+                    <div class="img">
+                    <img src="https://img.freepik.com/vetores-gratis/pessoas-tirando-dinheiro-da-ilustracao-do-conceito-de-banco_114360-12401.jpg?w=740&t=st=1698501249~exp=1698501849~hmac=b5b55dc80473686431618287a89b07014529b96b5ae82a1e7fdb9d13287dcaa1" style="width:350px">
+                    </div>
                 <div class="card-body">
-                    <h4 class="card-title">Saldo Conta Corrente</h4>
-                    <p class="card-text">R$ <c:out value="${usuario.getContaCorrente().getSaldo()}" /></p>
-                </div>
-            </div>
-        </div>
-         <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-body">
-                    <h4 class="card-title">Saldo Conta Poupanca</h4>
-                    <p class="card-text">R$ <c:out value="${usuario.getContaPoupanca().getSaldo()}" /></p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-body">
-                    <h4 class="card-title">Digite a chave pix:</h4>
-                    <form action="<c:url value='pix/validar'/>" method="post">
-  <div class="form-row align-items-center">
-    <div class="col-sm-6 my-1">
-      <label class="sr-only" for="inlineFormInputName">Agência</label>
-      <input type="text" name="chave" class="form-control" id="inlineFormInputName" placeholder="Chave">
-    </div>
-    </div>
-    <h4 class="card-title">Digite o valor:</h4>
-    <div class="form-row align-items-center">
-    <div class="col-sm-6 my-1">
-      <label class="sr-only" for="inlineFormInputGroupUsername">valor</label>
-      <div class="input-group">
-        <input type="text" name="valor" class="form-control" id="inlineFormInputGroupUsername" placeholder="Valor">
-      </div>
-    </div>
-    </div>
-    <h4 class="card-title">Debitar de:</h4>
-    <div class="form-row align-items-center">
-   <div class="col-auto my-1">
-      <label class="sr-only" for="conta">Conta</label>
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="variacaoConta">
-        <option value="26">Conta Corrente</option>
-        <option value="51">Conta Poupança</option>
-      </select>
-    </div>   
-    </div>
-    <input type="hidden" name="id" value="<c:out value="${usuario.id}" />">
-    <div class="col-auto my-1">
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </div>
- 
-  
-</form>
+                	<div class="text-center mt-4">
+                	<p class="text-muted">Pix enviado às <c:out value="${extrato.getCreatedFormated()}" /> </p>       
+    				</div>
                 </div>
             </div>
         </div>
     </div>
  
     <div class="text-center mt-4">
-        <a href="<c:url value='home'/>" class="btn btn-danger">Voltar</a>
+        <a href="<c:url value='/home/validausuario'><c:param name="usuario" value="${usuario}"></c:param></c:url>" class="btn btn-danger">Voltar ao inicio</a>
     </div>
     
     
