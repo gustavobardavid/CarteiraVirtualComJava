@@ -145,7 +145,21 @@ body {
     </div>
 </div>
 </div>
-
+<div class="row mt-0">
+    <div class="col-md-4 mb-2">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Saldo</h4>
+				<button class="btn btn-link" id="toggleBalance"><i class="fas fa-eye"></i></button>
+                </div>
+                <p class="card-text">
+                    <span id="balanceValue">R$ <c:out value="${usuario.getContaCorrente().getSaldo() + usuario.getContaPoupanca().getSaldo()}" /></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="alert alert-info mt-4" id="notification">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeButton">
         <span aria-hidden="true">&times;</span>
@@ -207,7 +221,7 @@ body {
     </div>
     
     <div class="row mt-4">
-        <div class="col-md-4">
+        <div class="col-md-4  mb-4">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Conta Corrente</h4>
@@ -215,7 +229,7 @@ body {
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4  mb-4">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Conta Poupança</h4>
@@ -223,7 +237,7 @@ body {
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4  mb-4">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Investimentos <i class="fas fa-chart-bar"></i></h4>

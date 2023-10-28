@@ -25,7 +25,7 @@ body {
 	grid-template-columns:repeat(2,1fr);
 }
 .descricao {
-	background: url(https://img.freepik.com/fotos-gratis/reuniao-de-negocios-vista-frontal-com-cafe_23-2148366527.jpg?w=1060&t=st=1698278194~exp=1698278794~hmac=03f5a29e7aca4144c5b8643857306b01880d0a36d8f0fe98a3d9e8c80d0b5abe);
+	background: url(/img/vemsercliente.jpg);
 	background-size: cover; 
     background-position: center;
     top: 20px;
@@ -166,7 +166,7 @@ nav li a:hover {
 }
 
 .slide1 {
-  background-image: url(https://img.freepik.com/fotos-gratis/com-os-olhos-fechados-uma-jovem-bonita-impressionada-segurando-dinheiro-isolado-na-parede-azul_141793-78751.jpg?w=1060&t=st=1698276672~exp=1698277272~hmac=d5c09817d018f898d6bfd50914305f17bc6ea37c036c671cafefa64c2eeb256c);
+  background-image: url(/img/poupe.jpg);
   animation-delay: 0s;
   opacity: 1;
 }
@@ -177,7 +177,7 @@ nav li a:hover {
 }
 
 .slide3 {
-  background-image: url(https://img.freepik.com/fotos-gratis/mealheiro-rosa-praia-viagens-ferias-poupanca-oculos-de-sol_1101-2839.jpg?w=740&t=st=1698276430~exp=1698277030~hmac=befb407874a5a95756580ec890b5889ad44dff06219eddb0fae97391151c7fbf);
+  background-image: url(https://img.freepik.com/fotos-gratis/piggybank-com-oculos-de-sol-amarelos_1101-104.jpg?1&w=740&t=st=1698428494~exp=1698429094~hmac=79fd7746dea80844046e3db845df0964a735f290c29e081894f63bac4c85bd0a)
   animation-delay: 5s;
 }
 
@@ -246,3 +246,38 @@ nav li a:hover {
       opacity: 1;
   }
 }
+@media screen and (max-width: 768px) {
+    body {
+      font-size: 10px; /* Reduzir o tamanho da fonte para dispositivos móveis */
+    }
+  
+    main {
+      margin: 5px 0; /* Reduzir a margem superior e inferior */
+    }
+  
+    .grid {
+      grid-template-columns: repeat(1,1fr); /* Alterar para uma coluna única em dispositivos móveis */
+    }
+  
+    .descricao,
+    .banner,
+    .banner2 {
+      width: 100%; /* Preencher a largura da tela */
+      height: 40vh; /* Ajustar a altura automaticamente */
+    }
+    .slideText {
+        width: 100%;
+        font-size: 15px;
+    }
+    h1 {
+      font-size: 20px; /* Reduzir o tamanho da fonte do título */
+      margin: 10px 0; /* Ajustar a margem */
+    }
+  
+    h2 {
+      font-size: 16px; /* Reduzir o tamanho da fonte dos subtítulos */
+      margin: 15px 0;
+    }
+  
+    /* Adicionar mais estilos específicos para dispositivos móveis, se necessário */
+  }

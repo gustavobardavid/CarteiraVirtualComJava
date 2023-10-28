@@ -79,4 +79,9 @@ public class HomeController {
 	public void sair() {
 		result.redirectTo(LoginController.class).login();
 	}
+	
+	@Get("pix")
+	public void pix() {
+		result.redirectTo(PixController.class).pix();
+	}
 }

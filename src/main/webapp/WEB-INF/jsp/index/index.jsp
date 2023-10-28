@@ -10,10 +10,263 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     
     <title>Programize Wallet </title>
 </head>
 <style>
+	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  margin: 10px 0;
+}
+
+body {
+  font-size: 13px;
+  font-weight: 400;
+  font-family: monospace;
+  margin: 0;
+  color: #ffffff;
+  background: linear-gradient(to right, #010e1f, #010e1f);
+  background-size: cover;
+  background-size: cover;
+}
+
+.grid , .gridOptions{
+	display:grid;
+	gap:10px;
+	grid-template-columns:repeat(2,1fr);
+}
+.descricao {
+	background: url(img/vemsercliente.jpg);
+	background-size: cover; 
+    background-position: center;
+    top: 20px;
+  	width: 700px;
+  	height: 500px;
+  	overflow: hidden;
+  	position: relative;
+  	margin: 50px auto;
+  	border-radius: 10px;
+}
+h1 {
+  font-family: monospace;
+  width: 50%;
+  margin: 10px 200px;
+  text-align: center;
+  border-top: 5px solid #ffffff;
+  background: linear-gradient(to left, #f18324, #f18324);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  color: #0d2226;
+}
+
+h2 {
+  text-align: center;
+  color: #d2d0e6;
+  margin: 25px 25px;
+  opacity: 0.7;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+h3 {
+  color: #f18324;
+  text-align: end;
+  margin: 25px 25px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+
+footer {
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.footer-top-wrapper {
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 48px;
+  margin: 0 auto;
+  padding: 16px;
+  min-height: 160px;
+}
+
+.footer-top-wrapper > section {
+  width: 100%;
+}
+
+footer h2 {
+  text-align: center;
+  color: #d2d0e6;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  opacity: 0.7;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+menu li {
+  margin-bottom: 0px;
+}
+
+nav {
+  font-family: monospace;
+  font: bold;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-left: 10px;
+  padding: 1px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+nav li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+nav li span {
+  font-size: small;
+}
+
+nav li a:hover {
+  text-decoration: none;
+  color: #f18324;
+}
+
+.banner {
+  top: 20px;
+  width: 700px;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  margin: 50px auto;
+  border-radius: 10px;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.slide1 {
+  background-image: url(img/poupe.jpg);
+  animation-delay: 0s;
+  opacity: 1;
+}
+
+.slide2 {
+  background-image: url(https://img.freepik.com/vetores-gratis/os-gerentes-financeiros-que-trabalham-com-clientes-isolaram-a-ilustracao-vetorial-plana-desenhos-animados-pessoas-sentadas-no-escritorio-do-banco-para-troca-de-dinheiro_74855-8370.jpg?w=1380&t=st=1698276137~exp=1698276737~hmac=65ae2c0b1f85fa587f04fc66f28b956d8073794a8f2df89dd923b573d8826184);
+  animation-delay: 5s;
+}
+
+.slide3 {
+  background-image: url (img/pig.jpg);
+  animation-delay: 5s;
+}
+
+
+@keyframes slideAnimation {
+  0%, 100% {
+      opacity: 0;
+  }
+  10%, 90% {
+      opacity: 1;
+  }
+}
+
+/* Estilos para o banner do carrossel */
+.banner2 {
+  top: 20px;
+  width: 100%; /* Preencher a largura da janela */
+  height: 400px; /* Ajuste a altura conforme necessário */
+  overflow: hidden;
+  position: relative;
+  margin: 50px auto;
+  border-radius: 10px;
+  background-color: #333; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+}
+
+/* Estilos para as descrições dentro do carrossel */
+.slideText {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* Tamanho da fonte */
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 1s;
+}
+.slide6 {
+  animation-delay: 0s;
+  opacity: 1;
+  background-color: #007BFF; /* Cor de fundo específica para este slide */
+  color: #fff; /* Cor do texto específica para este slide */
+}
+
+.slide4 {
+  animation-delay: 5s;
+  background-color: #E74C3C; /* Cor de fundo específica para este slide */
+  color: #fff; /* Cor do texto específica para este slide */
+}
+.slide5 {
+  animation-delay: 5s;
+  background-color: #020400; /* Cor de fundo específica para este slide */
+  color: #fff; /* Cor do texto específica para este slide */
+}
+
+@keyframes slideAnimation {
+  0%, 100% {
+      opacity: 0;
+  }
+  10%, 90% {
+      opacity: 1;
+  }
+}
 .header {
     display: flex;
     padding:10px;
@@ -111,10 +364,59 @@ body {
 .user-dropdown:hover .user-dropdown-menu {
     display: block;
 }
+@media screen and (max-width: 768px) {
+	#footer {
+		display: flex
+		flex-direction: collumn;
+	}
+	#footer .data {
+		display: none;
+	}
+    body {
+      font-size: 10px; /* Reduzir o tamanho da fonte para dispositivos móveis */
+    }
+  
+    main {
+      margin: 5px 0; /* Reduzir a margem superior e inferior */
+    }
+  
+    .grid {
+      grid-template-columns: repeat(1,1fr); /* Alterar para uma coluna única em dispositivos móveis */
+    }
+    
+    .gridOptions {
+    	grid-template-columns: repeat(2,1fr);
+    }
+  	.gridOptions h1 {
+    	width:100%;
+    }
+    .descricao,
+    .banner,
+    .banner2 {
+      width: 100%; /* Preencher a largura da tela */
+      height: 40vh; /* Ajustar a altura automaticamente */
+    }
+    .slideText {
+        width: 100%;
+        font-size: 15px;
+    }
+    h1 {
+      font-size: 20px; /* Reduzir o tamanho da fonte do título */
+      margin: 10px 0; /* Ajustar a margem */
+    }
+  
+    h2 {
+      font-size: 16px; /* Reduzir o tamanho da fonte dos subtítulos */
+      margin: 15px 0;
+    }
+  
+    /* Adicionar mais estilos específicos para dispositivos móveis, se necessário */
+  }
 </style>
 
 <body>
 <div class="header navbar navbar-expand-lg navbar-light bg-light">
+
 <span class="btn">
     <a
     href="#"
@@ -131,26 +433,6 @@ body {
     PROGRAMIZE Wallet
 </a>            
 </span>
-<div class="text-right">
-<div class="nav-item dropdown user-dropdown text-right">
-    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="user-name text-gray-800"><c:out value="${usuario.nome}"></c:out></span>
-            <i class="fas fa-user fa-2x user-name"></i>
-    </a>
-    <!-- Dropdown - User Information -->
-    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in user-dropdown-menu" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="<c:url value='perfil'> <c:param name="id" value="${usuario.id}" /></c:url>">
-            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-            Visão Geral
-        </a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="<c:url value='sair'/>" data-toggle="modal" data-target="#logoutModal">
-            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-            Sair
-        </a>
-    </div>
-</div>
-</div>
 </div>
     <nav class="sobre">
         <div id="conteiner">
@@ -161,18 +443,35 @@ body {
 </nav>
 <div class="grid">
     <div class="banner">
-        <div class="slide slide1"></div>
+        <div class="slide slide1"><h3>Tenha uma conta corrente completa com abertura 100% digital</h3></div>
         <div class="slide slide2">
         <h1>Livre-se das filas hoje mesmo</h1></div>
         <div class="slide slide3">
         <h1>Guarde onde é mais seguro</h1></div>
     </div>
+   
     <div class="descricao">
+    <a href="<c:url value='cadastrarUsuario'/>" style="text-decoration:none;">
     	<h1>Vem ser cliente</h1>
-    	<h2>Tenha uma conta corrente completa com abertura 100% digital</h2>
+    	</a>
     </div>
 </div>
-
+ <div class="gridOptions">
+	<div>
+    <a href="<c:url value='login'/>" style="text-decoration:none;">
+        <h1>Acesse a sua conta <span class="material-symbols-outlined">
+            arrow_outward
+            </span></h1>
+    </a>
+	</div>
+	<div>
+    <a href="<c:url value='login'/>" style="text-decoration:none;">
+        <h1>Temos ofertas de crédito para você<span class="material-symbols-outlined">
+            arrow_outward
+            </span></h1>
+    </a>
+	</div>	
+	</div>
 <div class="banner2">
     <div class="slideText slide6">
         <h2>Invista</h2>
@@ -191,22 +490,51 @@ body {
         <p>Um passo de cada vez</p>
     </div>
 </div>
-	<div class="grid">
-	<div>
-    <a href="<c:url value='login'/>" style="text-decoration:none;">
-        <h1>Acesse a sua conta <span class="material-symbols-outlined">
-            arrow_outward
-            </span></h1>
-    </a>
-	</div>
-	</div>
+	
 </body>
+<footer id="footer" class="footer text-center mt-3">
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+<span class="btn">
+    <a
+    href="#"
+    class='button'
+    >
+    <svg>
+        <rect
+        x="0" y="0" 
+        fill="none"
+        width="100%"
+        height="100%"
+        />
+    </svg>
+    PROGRAMIZE
+</a>            
+</span>
+    <div class="data">
+    <h3 style="font-size:13px;">Central de Relacionamento Programize</h3>
+    <p class="text-muted">4002 8922</p>
+    </div>
+    <div class="data">
+    <h3 style="font-size:13px;">Deficientes auditivos e de fala</h3>
+    <p class="text-muted">0800 897 0900</p>
+    </div>
+    <div class="data">
+    <h3 style="font-size:13px;">SAC</h3>
+    <p class="text-muted">0800 545 6768</p>
+    </div>
+    <div class="data">
+    <h3 style="font-size:13px;">Whatsapp</h3>
+    <p class="text-muted">11 9034 0900</p>
+    </div>
+    <!-- <p class="text-muted">&copy; 2023 Programize Solutions</p> -->
+</div>
+</footer>
 <footer>
     <div class="footer">
     <div class="footer-top-wrapper">
         <section>
             <menu>
-                <h2>Copyright © 2022 - 2023. Programize</h2>
+                <h2>Copyright © 2022 - 2023. Programize Solutions</h2>
                 <li>
                     <a></a>
                 </li>
@@ -214,14 +542,14 @@ body {
         </section>
         <section>
             <menu>
-                <h2>Check out the <a href="http://">CEO profile</a>. Current version 1.0</h2>
+                <h2>Check out the <a href="#">Source code</a>. Current version 1.0</h2>
                 <li>
                 </li>
             </menu>
         </section>
         <section>
             <menu>
-                <h2>Software Company</h2>
+                <h2>Software Skill</h2>
                 <li>
                     <a></a>
                 </li>
