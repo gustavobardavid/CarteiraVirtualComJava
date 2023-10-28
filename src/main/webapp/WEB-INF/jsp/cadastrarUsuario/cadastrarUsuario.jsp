@@ -149,7 +149,7 @@ body {
   </div>
   <div class="form-group">
     <label for="inputAddress2">Email</label>
-    <input type="email" name="usuario.name" class="form-control" id="inputAddress2" placeholder="example@example.com">
+    <input type="email" name="usuario.email" class="form-control" id="inputAddress2" placeholder="example@example.com">
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
