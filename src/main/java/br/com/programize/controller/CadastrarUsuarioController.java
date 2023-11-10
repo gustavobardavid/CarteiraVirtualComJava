@@ -1,8 +1,11 @@
 package br.com.programize.controller;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -18,6 +21,7 @@ import br.com.programize.dao.ContaCorrenteDAO;
 import br.com.programize.dao.ContaPoupancaDAO;
 import br.com.programize.dao.ExtratoDAO;
 import br.com.programize.dao.UsuarioDAO;
+import br.com.programize.model.Bacurin;
 import br.com.programize.model.ContaCorrente;
 import br.com.programize.model.ContaPoupanca;
 import br.com.programize.model.Extrato;
@@ -60,9 +64,13 @@ public class CadastrarUsuarioController {
 	    //atribui o usuario
 	    extrato.setUsuario(usuario);
 	    // Cria um novo array de extratos
-	    ArrayList<Extrato> extratos = new ArrayList<Extrato>();
+	    List<Extrato> extratos = new ArrayList<Extrato>();
+	    //set de bacurin
+	    Set<Bacurin> bacurins = new HashSet<Bacurin>();
 	    //associa o array de extratos para o usuario
 	    usuario.setExtratos(extratos);
+	    //associa usuario a bacurin
+	    usuario.setBacurins(bacurins);
 	    //adiciona o primeiro extrato
 	    usuario.addExtrato(extrato);
 	    // Salva a conta corrente no banco

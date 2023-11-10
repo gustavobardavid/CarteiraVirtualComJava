@@ -22,7 +22,8 @@ public class ExtratoController {
 	@Get("")
 	public void extrato(int id) {
 		Usuario usuario = dao.findById(id);
-		List<Extrato> extratos = usuario.getExtratos();
+		@SuppressWarnings("unchecked")
+		List<Extrato> extratos = (List<Extrato>) usuario.getExtratos();
 		List<Extrato> extratosInvertidos = new ArrayList<Extrato>();
 		for (int i = extratos.size() - 1; i >= 0; i--) {
 		       extratosInvertidos.add(extratos.get(i));

@@ -1,5 +1,7 @@
 package br.com.programize.model;
 import java.util.List;
+import java.util.Set;
+
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.CascadeType;
@@ -40,6 +42,10 @@ public class Usuario extends Model {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Extrato> extratos;
 	
+    // Anotando a coleção que representa o relacionamento um para muitos
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Bacurin> bacurins; 
+    
 	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "conta_poupanca_id")
 	private ContaPoupanca contaPoupanca;
@@ -53,6 +59,10 @@ public class Usuario extends Model {
 	}
 	public boolean addExtrato(Extrato extrato) {
 		this.extratos.add(extrato);
+		return true;
+	}
+	public boolean addBacurin(Bacurin bacurin) {
+		this.bacurins.add(bacurin);
 		return true;
 	}
 }

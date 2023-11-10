@@ -62,8 +62,10 @@ body {
     justify-content: center;
     transition: all 1s ease-in;
     padding: 2px;
+} 
+#balanceValue.hidden {
+  filter: blur(4px); 
 }
-
 .button:hover {
     color: #FF9950;
     text-decoration: none;
@@ -159,6 +161,7 @@ body {
             </div>
         </div>
     </div>
+    
 </div>
 <div class="alert alert-info mt-4" id="notification">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeButton">
@@ -184,12 +187,17 @@ body {
             <a href="#" class="btn btn-danger">Pagar</a>
             </div>
              <div class="card-body">
-        <a href="<c:url value='transferencia'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-success mr-3">Transferir
+        <a href="<c:url value='pix'><c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-danger mr-2">
+            <img style="width: 25px;" src="https://devtools.com.br/img/pix/logo-pix-png-icone-520x520.png" alt="Pix">
         </a>
-        <a href="<c:url value='depositar'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-primary mr-3">Depositar <i class="fas fa-wallet"></i></a>
-        <a href="<c:url value='pix'><c:param name="id" value="${usuario.id}" /></c:url>" class="">
-            <img style="width: 50px;" src="https://devtools.com.br/img/pix/logo-pix-png-icone-520x520.png" alt="Pix">
+        <a href="<c:url value='transferencia'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-success mr-3"><i class="fas fa-exchange-alt"></i>
         </a>
+        <a href="<c:url value='depositar'> <c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-primary mr-3"><i class="fas fa-money-bill-wave"></i></a>
+        <a href="<c:url value='bacurin'><c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-success mr-3"	>
+            <i class="fas fa-piggy-bank"></i>
+        </a>
+       
+        
      </div>
         </div>
         
@@ -288,6 +296,23 @@ body {
         document.getElementById("notification").style.display = "none";
     });
 </script>
+ <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var toggleButton = document.getElementById("toggleBalance");
+            var balanceSpan = document.getElementById("balanceValue");
+
+            toggleButton.addEventListener("click", function() {
+                // Verificar se o span está visível
+                if (balanceSpan.style.display !== "none") {
+                    // Ocultar o span
+                	 balanceSpan.classList.toggle("hidden");
+                } else {
+                    // Tornar o span visível
+                    balanceSpan.style.display = "inline"; // Ou use "block" dependendo do estilo desejado
+                }
+            });
+        });
+    </script>
  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -172,5 +172,22 @@ body {
         document.getElementById("notification").style.display = "none";
     });
 </script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var toggleButton = document.getElementById("toggleBalance");
+            var balanceSpan = document.getElementById("balanceValue");
+
+            toggleButton.addEventListener("click", function() {
+                // Verificar se o span está visível
+                if (balanceSpan.style.display !== "none") {
+                    // Ocultar o span
+                	 balanceSpan.classList.toggle("hidden");
+                } else {
+                    // Tornar o span visível
+                    balanceSpan.style.display = "inline"; // Ou use "block" dependendo do estilo desejado
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -2,7 +2,6 @@ package br.com.programize.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import br.com.caelum.vraptor.Controller;
@@ -37,14 +36,14 @@ public class HomeController {
 	        }
 	    }
 	   if (cpfEncontrado) {
-		   List<Extrato> extratos = usuarioEncontrado.getExtratos();
+	List<Extrato> extratos =  usuarioEncontrado.getExtratos();
 		   List<Extrato> extratosInvertidos = new ArrayList<Extrato>();
 
 		   for (int i = extratos.size() - 1; i >= 0; i--) {
 		       extratosInvertidos.add(extratos.get(i));
 		   }
 
-		   //extratosInvertidos contém a lista invertida
+		   //extratosInvertidos contém a Seta invertida
 
 		   result.include("usuario", usuarioEncontrado);
 		   result.include("extratos", extratosInvertidos);
@@ -83,5 +82,9 @@ public class HomeController {
 	@Get("pix")
 	public void pix(int id) {
 		result.redirectTo(PixController.class).pix(id);
+	}
+	@Get("bacurin")
+	public void bacurin(int id) {
+		result.redirectTo(BacurinController.class).bacurin(id);
 	}
 }

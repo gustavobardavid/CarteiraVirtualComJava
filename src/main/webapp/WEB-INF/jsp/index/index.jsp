@@ -1,4 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -80,7 +80,7 @@ h3 {
   color: #f18324;
   text-align: end;
   margin: 25px 25px;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 900;
 }
 
