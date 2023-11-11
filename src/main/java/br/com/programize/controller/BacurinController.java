@@ -20,7 +20,7 @@ public class BacurinController {
 	@Inject UsuarioDAO dao;
 	@Get("")
 	public void bacurin(int id) {
-		Usuario usuario = dao.findById(id);
+		Usuario usuario = dao.findById(id)	;
 		Set<Bacurin> bacurins = usuario.getBacurins();
 		result.include("bacurins", bacurins);
 		result.include("id", id);

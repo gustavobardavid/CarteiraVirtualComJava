@@ -9,7 +9,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Programize Wallet </title>
@@ -79,8 +81,8 @@ h2 {
 h3 {
   color: #f18324;
   text-align: end;
-  margin: 25px 25px;
-  font-size: 25px;
+  margin: 10px 25px;
+  font-size: 20px;
   font-weight: 900;
 }
 
@@ -105,7 +107,9 @@ footer {
   padding: 16px;
   min-height: 160px;
 }
-
+section {
+	color:black;
+}
 .footer-top-wrapper > section {
   width: 100%;
 }
@@ -241,6 +245,7 @@ nav li a:hover {
   text-align: center;
   transition: opacity 1s;
 }
+
 .slide6 {
   animation-delay: 0s;
   opacity: 1;
@@ -430,6 +435,7 @@ body {
         height="100%"
         />
     </svg>
+    
     PROGRAMIZE Wallet
 </a>            
 </span>
@@ -437,15 +443,16 @@ body {
     <nav class="sobre">
         <div id="conteiner">
             <ul>
-                <li><a href="#">A CARTEIRA VIRTUAL DA PROGRAMIZE</a></li>
+                <li class=""><a href="#">A CARTEIRA VIRTUAL DA PROGRAMIZE</a></li>
             </ul>
     </div>
 </nav>
 <div class="grid">
     <div class="banner">
-        <div class="slide slide1"><h3>Tenha uma conta corrente completa com abertura 100% digital</h3></div>
+        <div class="slide slide1"><h3 class="">Tenha uma conta corrente completa com abertura 100% digital</h3></div>
         <div class="slide slide2">
-        <h1>Livre-se das filas hoje mesmo</h1></div>
+        <h1 class="">Livre-se das filas hoje mesmo</h1>
+        </div>
         <div class="slide slide3">
         <h1>Guarde onde é mais seguro</h1></div>
     </div>
@@ -475,11 +482,11 @@ body {
 <div class="banner2">
     <div class="slideText slide6">
         <h2>Invista</h2>
-        <p>Transforme suas metas em realidade</p>
+        <p class="">Transforme suas metas em realidade</p>
     </div>
      <div class="slideText slide5">
         <h2>Cuidamos do seu dinheiro</h2>
-        <p>Você cuida do seu futuro</p>
+        <p class="typewriter">Você cuida do seu futuro</p>
     </div>
     <div class="slideText slide4">
         <h2>Elevando suas finanças a novos patamares.</h2>
@@ -490,6 +497,81 @@ body {
         <p>Um passo de cada vez</p>
     </div>
 </div>
+	<!-- Adicionando uma seção de recursos com ícones do FreePik -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <h3 class="text-center mb-4">Recursos Exclusivos</h3>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-wallet fa-3x mb-3"></i>
+                            <h4 class="card-title">Gestão Financeira</h4>
+                            <p class="card-text">Controle suas despesas e receitas de forma eficiente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-chart-pie fa-3x mb-3"></i>
+                            <h4 class="card-title">Análise de Dados</h4>
+                            <p class="card-text">Visualize gráficos e relatórios para melhor entender suas finanças.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <i class="fas fa-lock fa-3x mb-3"></i>
+                            <h4 class="card-title">Segurança</h4>
+                            <p class="card-text">Proteja suas informações financeiras com a mais alta segurança.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+<!-- Adicionando uma seção de Empréstimos com ícones do FreePik -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h3 class="text-center mb-4">Empréstimos Personalizados</h3>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-money-bill-wave fa-3x mb-3"></i>
+                        <h4 class="card-title">Opções de Empréstimo</h4>
+                        <p class="card-text">Escolha entre uma variedade de opções de empréstimo adaptadas às suas necessidades.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-credit-card fa-3x mb-3"></i>
+                        <h4 class="card-title">Pagamento Flexível</h4>
+                        <p class="card-text">Tenha a flexibilidade de escolher os termos de pagamento que se adequam ao seu orçamento.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-percent fa-3x mb-3"></i>
+                        <h4 class="card-title">Taxas Competitivas</h4>
+                        <p class="card-text">Oferecemos taxas de juros competitivas para garantir que você tenha as melhores condições.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 	
 </body>
 <footer id="footer" class="footer text-center mt-3">

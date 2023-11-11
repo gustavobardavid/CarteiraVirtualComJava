@@ -147,8 +147,25 @@ body {
     </div>
 </div>
 </div>
-<div class="row mt-0">
-    <div class="col-md-4 mb-2">
+<div class="row mt-0">   
+</div>
+<div class="alert alert-info mt-4" id="notification">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeButton">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>Atenção:</strong> Sua fatura de cartão de crédito vence em 5 dias.
+</div>
+<div class="container">
+ <%-- <div class="col-md-12">
+            <div class="card">
+                
+					<h5 class="text-center mt-2">Seja Bem-vindo, <c:out value="${usuario.nome}" />. Sentimos sua falta!</h5>
+                
+            </div>
+  </div> --%>
+    <div class="row">
+    <div class="col-md-6">     
+   
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between align-items-center">
@@ -160,33 +177,8 @@ body {
                 </p>
             </div>
         </div>
-    </div>
     
-</div>
-<div class="alert alert-info mt-4" id="notification">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="closeButton">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    <strong>Atenção:</strong> Sua fatura de cartão de crédito vence em 5 dias.
-</div>
-<div class="container">
- <div class="col-md-12">
-            <div class="card">
-                
-					<h5 class="text-center mt-2">Seja Bem-vindo, <c:out value="${usuario.nome}" />. Sentimos sua falta!</h5>
-                
-            </div>
-        </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-body">
-                <h4 class="card-title">Cartão de Crédito <i class="fas fa-credit-card"></i></h4>
-                    <p class="card-text">R$ 2,500.00</p>
-                </div>
-            <a href="#" class="btn btn-danger">Pagar</a>
-            </div>
-             <div class="card-body">
+      <div class="card-body">
         <a href="<c:url value='pix'><c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-danger mr-2">
             <img style="width: 25px;" src="https://devtools.com.br/img/pix/logo-pix-png-icone-520x520.png" alt="Pix">
         </a>
@@ -196,13 +188,10 @@ body {
         <a href="<c:url value='bacurin'><c:param name="id" value="${usuario.id}" /></c:url>" class="btn btn-success mr-3"	>
             <i class="fas fa-piggy-bank"></i>
         </a>
-       
-        
      </div>
         </div>
-        
-        <div class="col-md-6">
-            <div class="card mt-5">
+         <div class="col-md-6">
+            <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Atividade Recente <a href="<c:url value='extrato'><c:param name="id" value="${usuario.id}" /></c:url>"><i class="fas fa-history fa-sm"></i></a>
                     </h4>
@@ -218,14 +207,37 @@ body {
         </c:if>
     </c:forEach>
 </c:if>
-
-
-
                     </ul>
                 </div>
             </div>
         </div>
-         
+        <div class="col-md-6">
+     <div class="card mt-2">
+                <div class="card-body">
+                <h4 class="card-title"> Bacurins<i class="fas fa-piggy-bank"></i> </h4>
+                <c:set var="contador" value="0" scope="page" />
+                 <c:forEach items="${usuario.getBacurins()}" var="bacurin" begin="0" end="${usuario.getBacurins().size() - 1}">
+        			<c:if test="${contador < 1}">
+                    <p class="card-text"> Para <c:out value="${bacurin.nome}" /> - Minha Meta: R$ <c:out value="${bacurin.meta}" />
+                    </p>
+                  
+            			<c:set var="contador" value="${contador + 1}" scope="page" />
+        			</c:if>
+    			</c:forEach>
+                </div>
+            <a href="#" class="btn btn-success">Adicionar</a>
+    </div>
+        </div>
+         <div class="col-md-6">
+     <div class="card mt-2">
+                <div class="card-body">
+                <h4 class="card-title">Cartão de Crédito <i class="fas fa-credit-card"></i></h4>
+                    <p class="card-text">R$ 2,500.00</p>
+                </div>
+            <a href="#" class="btn btn-danger">Pagar</a>
+    </div>
+        </div>
+       
     </div>
     
     <div class="row mt-4">
@@ -245,17 +257,48 @@ body {
                 </div>
             </div>
         </div>
-        <div class="col-md-4  mb-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Investimentos <i class="fas fa-chart-bar"></i></h4>
-                    <p class="card-text">Tenha rendimentos a 110% do CDI</p>
+       
+    </div>
+</div>
+<hr>
+<section class="bg-light py-5">
+    <div class="container">
+        <h3 class="text-center mb-4"></h3>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-money-bill-wave fa-3x mb-3"></i>
+                        <h4 class="card-title">Opções de Empréstimo</h4>
+                        <p class="card-text">Escolha entre uma variedade de opções de empréstimo adaptadas às suas necessidades.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-credit-card fa-3x mb-3"></i>
+                        <h4 class="card-title">Peça um novo cartão</h4>
+                        <p class="card-text">Tenha a flexibilidade de escolher entre cada um dos benefícios que os cartões Programize têm.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-chart-bar fa-3x mb-3"></i>
+                        <h4 class="card-title">Investimentos </h4>
+                        <p class="card-text">Invista no Tesouro Selic, CDB's e em bitcoins com apenas um clique.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<hr>
+</section>
+
+ 
 <footer class="footer text-center mt-3">
     <div class="navbar navbar-expand-lg navbar-light bg-light">
 <span class="btn">

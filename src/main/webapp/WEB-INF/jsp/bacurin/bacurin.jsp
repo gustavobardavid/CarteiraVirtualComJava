@@ -124,28 +124,30 @@ body {
      <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-5">
+               <div class="card-body">
+    <h4 class="card-title">Meus Bacurins <i class="fas fa-piggy-bank"></i></h4>
+
+    <c:if test="${not empty bacurins}">
+        <c:forEach items="${bacurins}" var="bacurin" begin="0" end="${bacurins.size() - 1}">
+            <div class="card mt-5">
                 <div class="card-body">
-                    <h4 class="card-title">Meus Bacurins <i class="fas fa-piggy-bank"></i></h4>
-                     <c:if test="${not empty bacurins}">
-    					<c:forEach items="${bacurins}" var="bacurin" begin="0" end="${bacurins.size() - 1}">
-        					<ul>
-        					<li class="btn btn-primary mt-3">
-            					<c:out value="${bacurin.getNome()}" />
-        					</li>
-        					<li class="btn btn-primary mt-3">
-            				    <c:out value="${bacurin.getMeta()}"/>
-        					</li>
-            				<li class="btn btn-primary mt-3"> 
-            					<c:out value="${bacurin.getCreatedFormated()}"></c:out>
-            				</li>
-        					</ul>
-        					
-    					</c:forEach>
-					   </c:if> 
+                    <h4 class="card-title">
+                        <c:out value="${bacurin.getNome()}" />
+                    </h4>
+                    <button class="btn btn-primary mt-3">
+                        Meta: <c:out value="${bacurin.getMeta()}"/>
+                    </button>
+                    <button class="btn btn-success mt-3"> 
+                        Criado em: <c:out value="${bacurin.getCreatedFormated()}"></c:out>
+                    </button>
                 </div>
-                
             </div>
-            <button class="btn btn-primary mt-3" id="toggleBalance">Criar</button>
+        </c:forEach>
+    </c:if>
+</div>
+
+            </div>
+            <button class="btn btn-primary mt-3 col-md-12" id="toggleBalance">Criar</button>
             
             <div id="criarNovo" >
             <div class="card mt-5">
